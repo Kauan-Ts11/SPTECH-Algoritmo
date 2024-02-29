@@ -1,6 +1,5 @@
 <h1 align="center">SPETCH-Algoritmo</h1>
 
-#
 ### SOBRE
 
 - Repositório que abriga o desenvolvimento de atividades da matéria de Algoritmo.
