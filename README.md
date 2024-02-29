@@ -1,4 +1,4 @@
-# SPTECH-Algoritmo
+<h1 align="center">SPETCH-Algoritmo</h1>
 
 Repositório para hospedar as atividades realizadas na matéria de Algoritmo.
 
