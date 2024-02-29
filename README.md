@@ -1,7 +1,7 @@
 <h1 align="center">SPETCH-Algoritmo</h1>
 
 <p align="center">
-  <img src="sptech" width="500">
+  <img src="sptech.jpeg" width="500">
 </p>
 
 Repositório para hospedar as atividades realizadas na matéria de Algoritmo.
