@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    <center>
+        <h4>Insira sua Idade</h4>
+        <input type="number" id="input1"> <br> <br>
+        <button onclick="calcHomem()">Aposentadoria Homem</button>
+        <button>Aposentadoria Mulher</button>
+    </center>
+</body>
+</html>
+
+<script>
+    function calcHomem() {
+        var idade = input1.value;
+        var r = 70 - idade;
+
+        alert('Tempo para se Aposentar: ' + r  + ' anos.');
+    }
+
+    function calcMulher() {
+        var idade = input1.value;
+        var r = 60 - idade;
+
+        alert('Tempo para se Aposentar: ' + r  + ' anos.');
+    }
+</script>

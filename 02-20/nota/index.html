@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <center>
+        <h4>Insira a nota "Continuada"</h4>
+        <input type="number" id="input1"> <br>
+        <h4>Insira a nota "Semestral"</h4>
+        <input type="number" id="input2"> <br>
+        <h4>Insira seu Nome</h4>
+        <input type="text" id="input3"> <br> <br>
+        <button onclick="calc()">Calcular Média</button>
+    </center>
+</body>
+</html>
+
+<script>
+    function calc() {
+        var n1 = Number(input1.value);
+        var n2 = Number(input2.value);
+        var nome = input3.value;
+        
+        var media = (n1 * 0.4) +  (n2 * 0.6);
+
+        alert('A média de '+ nome + ' é: '+ media);
+
+    }
+</script>

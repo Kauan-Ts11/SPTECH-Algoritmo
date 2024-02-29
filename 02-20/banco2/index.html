@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <center>
+        <h4>Insira o valor</h4> <br>
+        <input type="number" id="input1"> <br> <br>
+        <button onclick="depositar()">Depositar</button>
+        <button onclick="retirar()">Retirar</button> <br>
+        <div id="div_Resultado"></div>
+    </center>
+</body>
+</html>
+
+<script>
+    var saldo = 0;
+    var input = 0;
+
+    function depositar() {
+        input = Number(input1.value);
+        saldo += input;
+
+        div_Resultado.innerHTML += `<br> Depósito de R$ ${input} efetuado! Saldo atual: R$ ${saldo}`;
+    }
+
+    function retirar() {
+        input = Number(input1.value);
+        saldo -= input; 
+
+        div_Resultado.innerHTML += `<br> Retirada de R$ ${input} efetuado! Saldo atual: R$ ${saldo}` ;
+    }
+</script>

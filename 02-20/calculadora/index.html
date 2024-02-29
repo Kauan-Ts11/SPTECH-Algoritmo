@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <title>Calculadora SPTech</title>
+</head>
+<body>
+    <h1>Calculadora SPTech</h1>
+    
+    Primeiro Valor
+    <input type="number" id="input1"> <br>
+
+    Segundo Valor
+    <input type="number" id="input2"> <br> <br>
+
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+</body>
+</html>
+
+<script>
+
+    function somar() {
+        var n1 = Number(input1.value);
+        var n2 = Number(input2.value);
+        var sum = n1 + n2;
+
+        alert(n1 + '+' + n2 + '=' + sum );
+    }
+
+    function subtrair() {
+        var n1 = input1.value;
+        var n2 = input2.value;
+        var resul = n1 - n2;
+
+        alert(n1 + '-' + n2 + '=' + resul );
+    }
+
+    function multiplicar() {
+        var n1 = input1.value;
+        var n2 = input2.value;
+        var resul = n1 * n2;
+
+        alert(n1 + '*' + n2 + '=' + resul );
+    }
+
+    function dividir() {
+        var n1 = input1.value;
+        var n2 = input2.value;
+        var resul = n1 / n2;
+
+        alert(n1 + '/' + n2 + '=' + resul );
+    }
+</script>
