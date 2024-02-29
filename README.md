@@ -1,4 +1,7 @@
-# SPTECH-Algoritmo
+<center>
+  # SPTECH-Algoritmo
+</center>
+
 
 Repositório para hospedar as atividades realizadas na matéria de Algoritmo.
 
