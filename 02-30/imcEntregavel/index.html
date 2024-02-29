@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <title>Desafio</title>
+</head>
+<body>
+    <center>
+        <h3>Insira seu Nome</h3>
+        <input type="text" id="input1"> <br><br>
+        <h3>Insira seu peso (Kg)</h3>
+        <input type="number" id="input2"> <br><br>
+        <h3>Insira sua altura (M²)</h3>
+        <input type="number" id="input3"> <br><br>
+        <button onclick="calc()">Calcular</button>
+    </center>
+
+</body>
+</html>
+<script>
+    function calc() {
+        var nome = input1.value;
+        var peso = input2.value;
+        var altura = input3.value;
+
+        var imc = peso / (altura * altura);
+        var pes = altura / 0.3048;
+        var oncas = peso * 35.274;
+        var imcOP = oncas / (pes * pes);
+
+        alert(`${nome}, seu IMC é: ${imc}
+A sua altura em Pés é: ${pes}
+O seu peso em Onças é: ${oncas}
+O seu IMC em onças/pes² é: ${imcOP}`);
+        
+
+    }
+</script>
