@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <center>
+        <h3>Insira a quantidade de KWh consumida no mês</h3>
+        <input type="number" id="input1"> <br> <br>
+        <button onclick="funcao()">calcular conta de Luz</button>
+    </center>
+</body>
+</html>
+
+<script>
+    function funcao() {
+        var kwh = input1.value;
+        var conta = kwh * 0.85;
+        var desconto = conta * 0.10;
+
+        if(kwh < 100) {
+            conta -= desconto;
+        }
+
+        alert(`Valor da conta é de R$${conta}`)
+    }
+</script>
