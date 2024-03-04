@@ -1,4 +1,4 @@
-<h1 align="center">SPETCH-Algoritmo</h1>
+<h1 align="center">SPTECH-Algoritmo</h1>
 
 ### SOBRE
 
