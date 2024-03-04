@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 8</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 8</h1>
+        
+        <div>
+            <input type="number" placeholder="Insira a quantidade de homens que entraram no elevador" id="inp_homens">
+            <input type="number" placeholder="Insira a quantidade de mulheres que entraram no elevador" id="inp_mulheres">
+            <button onclick="funcao()">Analisar Peso</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var homens = Number(inp_homens.value);
+        var mulheres = Number(inp_mulheres.value);
+        var pesoTotal = (homens * 80) + (mulheres * 60);
+
+        mensagem.innerHTML = `<p>Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoTotal}kg</p>`;
+
+        if(pesoTotal > 800) {
+            mensagem.innerHTML += `<p style="color: blue;">Será necessário que alguém desça para que o elevador se movimente.</p>`;
+        }
+
+        
+    }  
+</script>

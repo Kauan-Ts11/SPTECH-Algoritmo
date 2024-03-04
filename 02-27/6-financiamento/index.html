@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 6</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 6</h1>
+        
+        <div>
+            <input type="number" placeholder="Insira o valor da renda familiar" id="inp_renda">
+            <input type="number" placeholder="Insira o valor da prestação" id="inp_prestacao">
+            <button onclick="funcao()">Verificar Financiamento</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    function funcao() {
+        var renda = inp_renda.value;
+        var prestacao = inp_prestacao.value;
+        var porc = (prestacao / renda) * 100;
+
+        mensagem.innerHTML = `<p>A prestação corresponde a ${porc}% da renda familiar</p>`;
+
+        if(porc > 30) {
+            mensagem.innerHTML += `<b style="color: red;">Será necessário complementar a renda familiar</b>`;
+        }
+        
+    }
+</script>

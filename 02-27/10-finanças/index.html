@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 10</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 10</h1>
+        
+        <div>
+            <input type="text" placeholder="Insira seu saldo Bancário" id="inp_saldo">
+            <button onclick="funcao()">Verificar Finanças</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var saldo = inp_saldo.value;
+
+        if (saldo == 0) {
+            mensagem.innerHTML = `<p>Conta zerada!</p>`;
+        }
+        
+        if (saldo > 0 ) {
+            mensagem.innerHTML = `<p>Saldo positivo! sorriso</p>`;
+        }
+        if (saldo < 0) {
+            mensagem.innerHTML = `<p>Está devendo!</p>`;
+        }
+
+        
+    }  
+</script>

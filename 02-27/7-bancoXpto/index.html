@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 7</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Exercício 7</h1>
+        
+        <div>
+            <input type="number" placeholder="Insira o saldo da conta" id="inp_saldo">
+            <input type="number" placeholder="Insira o valor do débito (valor a retirar da conta)" id="inp_saque">
+            <button onclick="funcao()">Analisar Conta</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var saldo = inp_saldo.value;
+        var saque = inp_saque.value;
+        var saldoAtual = saldo - saque;
+
+        if(saldoAtual < 0) {
+            mensagem.innerHTML = `<b style="color: red;">O saldo atual da conta corrente é R$${saldoAtual}</b>`
+        }
+        else {
+            mensagem.innerHTML = `<b>O saldo atual da conta corrente é R$${saldoAtual}</b>`
+        }
+    }  
+</script>

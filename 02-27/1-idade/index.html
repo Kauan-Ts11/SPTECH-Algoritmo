@@ -5,21 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="auhtor" content="Kauan Gabriel">
     <title>Exercício 1</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
+
 <body>
-    <center>
-        <h3>Insira a sua idade</h3>
-        <input type="number" id="input1"> <br> <br>
-        <button onclick="funcao()">Ir pra Festa</button>
-    </center>
+
+    <div class="container">
+
+        <h1>Exercício 1</h1>
+        
+        <div>
+            <input type="number" placeholder="Insira sua Idade" id="inp_idade">
+            <button onclick="funcao()">Ir pra Festa</button>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
 
 <script>
     function funcao() {
-        var idade = Number(input1.value);
+        var idade = Number(inp_idade.value);
 
-        if( idade < 18) {
+        if (idade < 18) {
             alert("Pedir permissão pro Responsável")
         }
 

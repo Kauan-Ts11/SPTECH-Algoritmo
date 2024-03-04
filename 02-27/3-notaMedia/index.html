@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 3</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Exercício 3</h1>
+        
+        <div>
+            <input type="number" placeholder="Insira a 1º Nota" id="inp_n1">
+            <input type="number" placeholder="Insira a 2º Nota" id="inp_n2">
+            <input type="number" placeholder="Insira a 3º Nota" id="inp_n3">
+            <button onclick="funcao()">Analisar Desempenho</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+</body>
+</html>
+
+<script>
+    function funcao() {
+        var n1 = Number(inp_n1.value);
+        var n2 = Number(inp_n2.value);
+        var n3 = Number(inp_n3.value);
+
+        var media = (n1 + n2 + n3) / 3;
+
+        mensagem.innerHTML = `<p>Sua média foi de ${media}</p>`;
+
+        if(media > 9.4) {
+            mensagem.innerHTML += `<p>Parabéns, você é fora de série!</p>`;
+        }
+    }
+</script>

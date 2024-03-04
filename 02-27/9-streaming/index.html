@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 9</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 9</h1>
+        
+        <div>
+            <input type="text" placeholder="Insira a Série que assistiu" id="inp_serie">
+            <input type="number" placeholder="Insira a quantidade episódios que já assistiu" id="inp_eps">
+            <button onclick="funcao()">Verificar Nível</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var serie = inp_serie.value;
+        var eps = inp_eps.value;
+        var hrs = (eps * 22)/60 ;
+
+        mensagem.innerHTML = `<p>Vejo que você gosta da série ${serie}</p>`;
+
+        if (hrs > 30) {
+            mensagem.innerHTML += `<p>Uau, você realmente gosta dessa série!</p>`;
+        }
+
+        
+    }  
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 2</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Exercício 2</h1>
+        
+        <div>
+            <input type="number" placeholder="Quantas latinhas de refri você toma por dia?" id="inp_refri">
+            <button onclick="funcao()">Quantos refris?</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+
+</body>
+</html>
+
+<script>
+    function funcao() {
+        var refri = Number(inp_refri.value);
+        var total = refri * 365;
+
+        mensagem.innerHTML = total;
+        
+        if(total > 500) {
+            mensagem.innerHTML += `<p>Cuidado com a Diabetes!</p>`;
+        }
+        
+    }
+</script>
