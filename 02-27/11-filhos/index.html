@@ -29,6 +29,24 @@
 <script>
 
     function funcao() {
+        var filhos = inp_filhos.value;
+
+        if (filhos < 1) {
+            mensagem.innerHTML = ``;
+        }
+        if (filhos >= 1) {
+            mensagem.innerHTML = `<p>Não tem TV</p>`;
+        }
+        if (filhos >= 2) {
+            mensagem.innerHTML += `<p>Não tem Internet</p>`;
+        }
+        if (filhos >= 3) {
+            mensagem.innerHTML += `<p>Não tem Video Game</p>`;
+        }
+        if (filhos >= 4) {
+            mensagem.innerHTML += `<p>Não tem Netflix</p>`;
+        }
+
             
     }  
 </script>

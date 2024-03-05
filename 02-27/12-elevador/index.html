@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 12</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 12</h1>
+        
+        <div>
+            <input type="number" placeholder="Insira o peso total do Elevador" id="inp_peso">
+            
+            <button onclick="funcao()">Ligar Elevador</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var peso = inp_peso.value;
+
+        if (peso < 500) {
+            alert(`Elevador vai se mover`);
+        } else {
+            alert(`Alguém precisa descer do Elevador`);
+        }
+            
+    }  
+</script>
