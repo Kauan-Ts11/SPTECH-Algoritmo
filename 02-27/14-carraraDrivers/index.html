@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 14</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 14</h1>
+        
+        <div>
+            <input type="text" placeholder="Insira seu Nome" id="inp_nome">
+            <input type="number" placeholder="Insira a distância até seu destino (km)" id="inp_km">
+            <input type="number" min="1" max="3" placeholder="Insira a bandeira da Corrida" id="inp_bandeira">
+            <input type="number" min="0" max="23" placeholder="Insira o horário da Corrida" id="inp_horario">
+            
+            <button onclick="funcao()">Calcular Corrida</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+            var nome = inp_nome.value;
+            var km = inp_km.value;
+            var bandeira = inp_bandeira.value;
+            var horario = inp_horario.value;
+            var valorCorrida = km * 1.25;
+            var valorTotal = valorCorrida;
+
+            if (horario <= 6) {
+                valorTotal += valorCorrida * 0.05 * bandeira; 
+            }
+            if (horario <= 12) {
+                
+                valorTotal += valorCorrida * 0.10 * bandeira; 
+            }
+            if (horario <= 23) {
+                
+                valorTotal += valorCorrida * 0.15 * bandeira; 
+            }
+
+            mensagem.innerHTML = `<p>Olá ${nome}, sua corrida será na bandeira ${bandeira}, percorrerá ${km} km e o total será de ${valorTotal}</p>`
+    }  
+</script>
