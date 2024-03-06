@@ -5,25 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kauan Gabriel">
     <title>Desafio</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <center>
-        <h3>Insira seu Nome</h3>
-        <input type="text" id="input1"> <br><br>
-        <h3>Insira seu peso (Kg)</h3>
-        <input type="number" id="input2"> <br><br>
-        <h3>Insira sua altura (M²)</h3>
-        <input type="number" id="input3"> <br><br>
-        <button onclick="calc()">Calcular</button>
-    </center>
+
+    <div class="container">
+
+        <h1>Desafio</h1>
+        
+        <div>
+            <input type="text" placeholder="Insira seu Nome" id="inp_nome">
+            <input type="number" placeholder="Insira seu Peso (Kg)" id="inp_peso">
+            <input type="number" placeholder="Insira sua Altura" id="inp_altura">
+            
+            <button onclick="funcao()">Calcular</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
 
 </body>
 </html>
 <script>
-    function calc() {
-        var nome = input1.value;
-        var peso = input2.value;
-        var altura = input3.value;
+    function funcao() {
+        var nome = inp_nome.value;
+        var peso = inp_peso.value;
+        var altura = inp_altura.value;
 
         var imc = peso / (altura * altura);
         var pes = altura / 0.3048;

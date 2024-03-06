@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="auhtor" content="Kauan Gabriel">
     <title>Primeira Aula de JS</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <input type="text" name="" id="time" placeholder="Nome do Time">
-    <input type="number" name="" id="titulo" placeholder="Titulos">
 
-    <button id="btn" onclick="fun()">Amo meu Time</button>
+    <div class="container">
+
+        <h1>Primeira Aula De JS</h1>
+        
+        <div>
+            <input type="text" placeholder="Insira o Nome do Time" id="time">
+            <input type="number" placeholder="Insira a quantidade de Titulos" id="titulos">
+            
+            <button onclick="funcao()">Amo meu Time</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
 </body>
 </html>
 
 <script>
-    function fun() {
+    function funcao() {
         alert("O Time "+time.value+" tem "+ titulo.value+ " Titulos!");
     }
 </script>

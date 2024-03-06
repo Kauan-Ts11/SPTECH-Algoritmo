@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="auhtor" content="Kauan Gabriel">
     <title>Primeira Aula de JS</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <input type="text" name="" id="logradouro" placeholder="Logradouro">
-    <input type="number" name="" id="numero" placeholder="Número">
 
-    <button id="btn" onclick="fun()">Onde eu Moro?</button>
+    <div class="container">
+
+        <h1>Primeira Aula de JS</h1>
+        
+        <div>
+            <input type="text" placeholder="Insira o Logradouro" id="logradouro">
+            <input type="number" placeholder="Insira o Número" id="numero">
+            
+            <button onclick="funcao()">Onde eu Moro</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
 </body>
 </html>
 
 <script>
-    function fun() {
+    function funcao() {
         alert("Seu logradouro é "+logradouro.value);
         alert("O número do seu logradouro é "+numero.value )
     }

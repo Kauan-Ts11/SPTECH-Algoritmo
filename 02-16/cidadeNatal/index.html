@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kauan Gabriel">
     <title>Primeira Aula De JS</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <input type="text" name="" id="cidade" placeholder="Cidade Natal">
-    <input type="text" name="" id="anoNasc" placeholder="Ano de Nascimento">
 
-    <button id="btn" onclick="fun()"> enviar</button>
+    <div class="container">
+
+        <h1>Primeira Aula De JS</h1>
+        
+        <div>
+            <input type="text" placeholder="Insira sua Cidade Natal" id="cidade">
+            <input type="text" placeholder="Insira seu anoe de Nascimento" id="anoNasc">
+            
+            <button onclick="funcao()">Enviar</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
 </body>
 </html>
 
 <script>
-    function fun() {
+    function funcao() {
         alert("Você nasceu na cidade "+cidade.value+" em "+anoNasc.value);
     }
 </script>
