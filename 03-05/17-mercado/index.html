@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 17</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 17</h1>
+        
+        <div>
+            <input type="number" min="0" placeholder="Insira a quantidade de Chocolates" id="inp_chocolate">
+            
+            <button onclick="funcao()">Compra</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var chocolate = inp_chocolate.value;
+        var compra = 0;
+
+        if (chocolate <= 12) {
+            compra = chocolate * 3.00;
+        } else {
+            compra = chocolate * 2.50;
+        }
+
+        mensagem.innerHTML = `<p>O valor da sua compra foi de R$${compra}.</p>`
+    
+
+    }  
+</script>

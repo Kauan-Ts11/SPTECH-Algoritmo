@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 20</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 20</h1>
+        
+        <div>
+            <input type="number" max="10" min="0" placeholder="Insira a temperatura ambiente" id="inp_temp">
+            
+            <button onclick="funcao()">Verificar Clima</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var temp = inp_temp.value;
+
+        if (temp < 10) {
+            mensagem.innerHTML = `<p>Apropriada p/ conservar Alimento.</p>`;
+        } else {
+            mensagem.innerHTML = `<p>Inapropriada p/ conservar Alimento.</p>`;
+        }
+    
+
+    }  
+</script>

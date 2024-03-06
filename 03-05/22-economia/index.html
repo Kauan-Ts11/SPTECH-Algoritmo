@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 22</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 22</h1>
+        
+        <div>
+            <input type="number" min="0" placeholder="Insira sua meta de Economia" id="inp_meta">
+            <input type="number" min="0" placeholder="Insira seu Saldo" id="inp_saldo">
+            
+            <button onclick="funcao()">Analisar Economia</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var meta = Number(inp_meta.value);
+        var saldo = Number(inp_saldo.value);
+        var final = saldo - meta;
+
+
+        if (saldo >= meta ) {
+            mensagem.innerHTML = `<p>Parabéns, meta alcançada!</p>`;
+            if (saldo > meta) {
+                mensagem.innerHTML += `<p>Meta ultrapassada em R$${final}.</p>`;
+            }
+        } else {
+            mensagem.innerHTML = `<p>Força! Ainda em busca da meta! Falta R$${final}.</p>`;
+        }
+    
+
+    }  
+</script>

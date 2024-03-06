@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="auhtor" content="Kauan Gabriel">
+    <title>Exercício 15</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Exercício 15</h1>
+        
+        <div>
+            <input type="text" placeholder="Insira seu Nome" id="inp_nome">
+            <input type="number" min="0" placeholder="Insira sua Idade" id="inp_idade">
+            
+            <button onclick="funcao()">Avaliar Aluno</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function funcao() {
+        var nome = inp_nome.value;
+        var idade = inp_idade.value;
+
+        if (idade >= 18) {
+            mensagem.innerHTML = `<p>${nome}, vamos tirar a CNH?</p>`;
+        } else {
+            mensagem.innerHTML = `<p>${nome}, vai jogar Playstation</p>`;
+        }
+
+    }  
+</script>

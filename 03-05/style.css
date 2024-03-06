@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e2eafb;
+    font-family: monospace;
+}
+
+.container  {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.container div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    width: 84%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    background-color:  #7fd3d3;
+    font-size: 20px;
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+#foto {
+    width: 250px;
+    height: 250px;
+}
