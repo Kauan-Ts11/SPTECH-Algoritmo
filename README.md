@@ -3,6 +3,7 @@
 ### SOBRE
 
 - Repositório que abriga o desenvolvimento de atividades da matéria de Algoritmo.
+- JS integrado ao html.
 
 #
 ### TECNOLOGIAS
