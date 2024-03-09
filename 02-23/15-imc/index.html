@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 15</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>IMC</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira sua Altura" id="inp_altura">
+            <input type="number" placeholder="Insira seu Peso" id="inp_peso">
+
+            <button onclick="calc()">Calcular IMC</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calc() {
+        var altura = Number(inp_altura.value);
+        var peso = Number(inp_peso.value);
+
+        var imc = peso / (altura * altura);
+
+        mensagem.innerHTML += `<p>Seu IMC é: ${imc}</p>`;
+
+    }
+</script>

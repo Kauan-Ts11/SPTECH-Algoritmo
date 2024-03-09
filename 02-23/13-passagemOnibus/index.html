@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 13</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Bilhete Único - VT</h1>
+
+        <div class="divInput">
+            <input type="number" placeholder="Insira o valor da Passagem" id="inp_passagem">
+            <input type="number" placeholder="Insira a quantidade de viagens do mês" id="inp_viagens">
+            <input type="number" placeholder="Insira a distancia da sua casa ao trabalho (Km)" id="inp_distancia">
+
+            <button onclick="calc()">calcular VT</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+     function calc() {
+        var passagem = Number(inp_passagem.value);
+        var viagens = Number(inp_viagens.value);
+        var distancia = Number(inp_distancia.value);
+
+        var valorOnibus = passagem * viagens;
+        var valorApp = 0.75 * distancia * 0.1 * viagens;
+        var valorTotal = valorOnibus + valorApp;
+
+        mensagem.innerHTML += `<p>Você vai gastar R$ ${valorTotal} por mês com transporte</p>`;
+
+     }
+</script>

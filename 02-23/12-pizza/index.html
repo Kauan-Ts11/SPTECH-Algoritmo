@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 12</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Pizzaria</h1>
+
+        <div class="divInput">
+            <input type="text" placeholder="Insira o sabor da Pizza" id="inp_sabor">
+            <input type="text" placeholder="Insira o valor da Pizza" id="inp_valor">
+            <input type="text" placeholder="Insira a quantidade de Amigos" id="inp_amigos">
+
+            <button onclick="calc()">Ver valor por Amigo</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calc() {
+        var sabor = inp_sabor.value;
+        var valor = Number(inp_valor.value);
+        var amigos = Number(inp_amigos.value);
+
+        var valorTotal = (valor * 0.1) + valor;
+        var valorAmigo = valorTotal / amigos;
+
+        mensagem.innerHTML += `<p>Cada amigo vai colaborar com R$ ${valorAmigo} para a pizza de ${sabor}</p>`;
+    }
+</script>

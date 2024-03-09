@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 10</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Eleioções</h1>
+
+        <div class="divInput">
+            <input type="number" placeholder="Insira os votos do Candidato A" id="inp_cA">
+            <input type="number" placeholder="Insira os votos do Candidato B" id="inp_cB">
+            <input type="number" placeholder="Insira os votos em Branco" id="inp_branco">
+            <input type="number" placeholder="Insira os votos em Nulo" id="inp_nulo">
+
+            <button onclick="funcao()">Resultado das Eleioções</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function funcao() {
+        var cA = Number(inp_cA.value);
+        var cB = Number(inp_cB.value);
+        var branco = Number(inp_branco.value);
+        var nulo = Number(inp_nulo.value);
+
+        var totalVotos = cA + cB + branco + nulo;
+        var invalidos = branco + nulo;
+
+        var pA = (cA / totalVotos) * 100;
+        var pB = (cB / totalVotos) * 100;
+        var pI = (invalidos / totalVotos) * 100;
+
+        mensagem.innerHTML = `
+        <p> Total de votos: ${totalVotos}</p>
+        <p> Candidato A: ${pA}% (${cA} votos)</p>
+        <p> Candidato B: ${pB}% (${cB} votos)</p>
+        <p> Inválidos: ${pI}% (${invalidos} votos)</p>
+        `;
+
+    }
+</script>

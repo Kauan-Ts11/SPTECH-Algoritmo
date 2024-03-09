@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 9</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Fases do Sono</h1>
+
+        <div class="divInput">
+            <input type="number" placeholder="Insira quantas horas de sono você dormiu" id="inp_sono">
+
+            <button onclick="funcao()">Calcular Sono</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function funcao() {
+        var sono = Number(inp_sono.value);
+
+        var fase1 = sono * 0.05;
+        var fase2 = sono * 0.45;
+        var fase3 = sono * 0.30;
+        var faseRem = sono * 0.20;
+
+        mensagem.innerHTML += `
+            <p>Ao dormir ${sono} horas </p>
+            <p>${fase1} horas na fase 1 </p>
+            <p>${fase2} horas na fase 2 </p>
+            <p>${fase3} horas na fase 3 </p>
+            <p>${faseRem} horas na fase rem </p>
+        `;
+
+    }
+</script>

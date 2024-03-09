@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 14</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <img class="logo" src="Dragon-Ball-Z.png" alt="">
+        
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira o seu KI" id="inp_ki">
+
+            <h2>Transformar em...</h2>
+
+        </div>
+
+        <div class="botoes">
+            <button class="ssj" onclick="calcSSJ()">SSJ</button> 
+            <button class="ssj2" onclick="calcSSJ2()">SSJ2</button> 
+            <button class="ssj3" onclick="calcSSJ3()">SSJ3</button> 
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+     function calcSSJ() {
+        var ki = Number(inp_ki.value);
+
+        var ssj = ki * 50;
+
+        mensagem.innerHTML += `<p>Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${ssj}.</p>`;
+     }
+
+     function calcSSJ2() {
+        var ki = Number(inp_ki.value);
+
+        var ssj2 = ki * 100;
+
+        mensagem.innerHTML += `<p>Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${ssj2}.</p>`;
+     }
+
+     function calcSSJ3() {
+        var ki = Number(inp_ki.value);
+
+        var ssj3 = ki * 200;
+
+        mensagem.innerHTML += `<p>Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${ssj3}.</p>`;
+     }
+</script>
