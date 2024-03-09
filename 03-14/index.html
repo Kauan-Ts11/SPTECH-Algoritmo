@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--TITLE-->
+    <title>Atividade Avaliativa II</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Salário - CLT</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira o valor do seu Salário" id="inp_salario">
+            <input type="number" placeholder="Insira o valor do seu Adicional Mensal" id="inp_adicional">
+            <input type="number" placeholder="Insira o valor do seu Bônus" id="inp_bonus">
+
+            <button onclick="analisar()">Analisar Minha Renda</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+
+        //INPUTS
+
+        var salario = Number(inp_salario.value);
+        var adicional = Number(inp_adicional.value);
+        var bonus = Number(inp_bonus.value);
+
+        //DECLARANDO VARIÁVEIS
+        var salarioDesconto = 0;
+        var impostoRenda = 0;
+        var inss = 0;
+        var fgts = 0;
+        var salarioLiquido = 0;
+        var poupanca = 0;
+        var poupanaFinal = 0;
+
+        //CALCULOS - SALÁRIO BRUTO
+
+        var salarioBruto = salario + adicional + bonus;
+
+        salarioDesconto = salarioBruto;
+
+
+        //CALCULOS - VERIFICANDO SE O BRUTO É IGUAL OU MAIOR QUE 10.000
+
+        if (salarioBruto >= 10000) {
+            impostoRenda = salarioBruto * 0.125;
+            salarioDesconto -= impostoRenda;
+        }
+
+        //CALCULOS - CALCULANDO FGTS E DESCONTO DO INSS
+
+        inss = salarioDesconto * 0.10;
+
+        fgts = salarioDesconto * 0.08;
+
+
+        //CALCULOS - SALARIO LIQUIDO
+
+        salarioLiquido = salarioBruto - inss - fgts - impostoRenda;
+
+
+        //MENSAGEM DO SISTEMA 
+
+        mensagem.innerHTML = `
+        <h3>Análise da sua Renda</h3>
+        <p>Com o Salário de <span class="mais">R$${salario}</span>, com Adicional de <span class="mais">R$${adicional}</span> e Bônus de <span class="mais">R$${bonus}</span>, você tem:</p>
+        <p>Salário Bruto: <span>R$${salarioBruto}</span></p>
+        <p>IR: <span class="menos">R$${impostoRenda}</span></p>
+        <p>INSS: <span class="menos">R$${inss}</span></p>
+        <p>FGTS: <span class="menos">R$${fgts}</span></p>
+        <p>Salário Líqudo: <span class="mais">R$${salarioLiquido}</span></p>
+        `;
+
+        //VERIFICANDO SE O SALÁRIO LÍQUIDO É MAIOR QUE 2.500
+
+        if (salarioLiquido > 2500) {
+            poupanca = salarioLiquido * 0.15;
+            poupanaFinal = poupanca * 12;
+            mensagem.innerHTML += `<p>Com a renda de <span class="mais">R$${salarioLiquido}</span>, é recomendado poupar <span class="mais">R$${poupanca}</span>, para que em um ano tenha poupado <span class="mais">R$${poupanaFinal}</span></p>`;
+        } else {
+            mensagem.innerHTML += `<p>Com a renda <span class="mais">R$${salarioLiquido}</span>, é recomendado obter renda extra para realizar uma Poupança.</p>`;
+        }
+
+    }
+</script>
