@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 1</title>
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <h1>Aposentadoria</h1>
+
+        <div class="div-input">
+            <input type="number" placeholder="Insira sua idade" id="inp_idade">
+
+            <button onclick="calcHomem()">Aposentadoria Homem</button>
+            <button onclick="calcMulher() " class="btnMulher">Aposentadoria Mulher</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcHomem() {
+        var idade = inp_idade.value;
+        var r = 70 - idade;
+
+        alert('Tempo para se Aposentar: ' + r + ' anos.');
+    }
+
+    function calcMulher() {
+        var idade = inp_idade.value;
+        var r = 60 - idade;
+
+        alert('Tempo para se Aposentar: ' + r + ' anos.');
+    }
+</script>

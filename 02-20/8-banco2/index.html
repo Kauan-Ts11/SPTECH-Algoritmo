@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 8</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Transações Bancarias</h1>
+
+        <div>
+
+            <input type="number" placeholder="Insira o valor" id="inp_valor">
+
+        </div>
+
+        <div class="botoes">
+            <button class="receber" onclick="depositar()">Depositar</button>
+            <button class="pagar" onclick="retirar()">Retirar</button> <br>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var saldo = 0;
+    var valor = 0;
+
+    function depositar() {
+        valor = Number(inp_valor.value);
+        saldo += valor;
+
+        mensagem.innerHTML += `<br> Depósito de R$ ${valor} efetuado! Saldo atual: R$ ${saldo}`;
+    }
+
+    function retirar() {
+        valor = Number(inp_valor.value);
+        saldo -= valor;
+
+        mensagem.innerHTML += `<br> Retirada de R$ ${valor} efetuado! Saldo atual: R$ ${saldo}`;
+    }
+</script>

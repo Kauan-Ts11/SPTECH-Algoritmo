@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 3</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Bilhete Único</h1>
+
+        <div class="div-input">
+            <input type="number" placeholder="Insira o valor da Passagem" id="inp_passagem">
+            <input type="number" placeholder="Insira quantas viagens fará no mês" id="inp_viagens">
+
+            <button onclick="calc()">Ver Economia</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calc() {
+        var passagem = inp_passagem.value;
+        var viagens = inp_viagens.value;
+        var valorMes = passagem * viagens;
+        var r = valorMes / 2
+
+        alert('Você economizara R$' + r + ' no mês.')
+    }
+</script>

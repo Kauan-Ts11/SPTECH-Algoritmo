@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 4</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img class="logo" src="Dragon-Ball-Z.png" alt="">
+
+        <div class="div-input">
+            <input type="text" placeholder="Insira o nome do Guerreiro" id="inp_nome">
+            <input type="text" placeholder="Insira o KI do Guerreiro" id="inp_ki">
+            
+            <button onclick="calc()" class="btnDragonBall">Ver KI em cada forma</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calc() {
+        var nome = inp_nome.value;
+        var ki = inp_ki.value;
+        var ss1 = ki * 50;
+        var ss2 = ki * 100;
+
+        alert(nome + ', seu KI na forma Super Sayajin 1 é: ' + ss1);
+        alert(nome + ', seu KI na forma Super Sayajin 2 é: ' + ss2);
+    }
+</script>

@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!--METADATAS-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="auhtor" content="Kauan Gabriel">
-    <title>Primeira Aula de JS</title>
+    <!--CSS-->
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Primeira Aula de JS</title>
 </head>
+
 <body>
 
     <div class="container">
 
         <h1>Primeira Aula De JS</h1>
-        
+
         <div>
             <input type="text" placeholder="Insira o Nome do Time" id="time">
             <input type="number" placeholder="Insira a quantidade de Titulos" id="titulos">
-            
+
             <button onclick="funcao()">Amo meu Time</button>
         </div>
-
-        <div id="mensagem"></div>
 
     </div>
 
 </body>
+
 </html>
 
 <script>
     function funcao() {
-        alert("O Time "+time.value+" tem "+ titulo.value+ " Titulos!");
+        alert("O Time " + time.value + " tem " + titulo.value + " Titulos!");
     }
 </script>

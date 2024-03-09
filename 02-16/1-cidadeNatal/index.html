@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!--METADATAS-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kauan Gabriel">
-    <title>Primeira Aula De JS</title>
+    <!--CSS-->
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Primeira Aula De JS</title>
 </head>
+
 <body>
 
     <div class="container">
 
         <h1>Primeira Aula De JS</h1>
-        
+
         <div>
             <input type="text" placeholder="Insira sua Cidade Natal" id="cidade">
             <input type="text" placeholder="Insira seu anoe de Nascimento" id="anoNasc">
-            
+
             <button onclick="funcao()">Enviar</button>
         </div>
-
-        <div id="mensagem"></div>
 
     </div>
 
 </body>
+
 </html>
 
 <script>
     function funcao() {
-        alert("Você nasceu na cidade "+cidade.value+" em "+anoNasc.value);
+        alert("Você nasceu na cidade " + cidade.value + " em " + anoNasc.value);
     }
 </script>

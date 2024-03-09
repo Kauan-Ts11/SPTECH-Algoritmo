@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!--METADATAS-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Kauan Gabriel"> 
-    <title>Primeira Aula De JS</title>
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Primeira Aula De JS</title>
 </head>
+
 <body>
 
     <div class="container">
 
         <h1>Primeira Aula De JS</h1>
-        
+
         <div>
             <input type="number" placeholder="Insira seu Peso" id="peso">
             <input type="text" placeholder="Insira sua Altura" id="altura">
-            
+
             <button onclick="funcao()">Fale Comigo</button>
         </div>
-
-        <div id="mensagem"></div>
 
     </div>
 
 </body>
+
 </html>
 
 <script>
     function funcao() {
-        alert("Você pesa "+peso.value+"Kg, e tem "+ altura.value+ "m de altura");
+        alert("Você pesa " + peso.value + "Kg, e tem " + altura.value + "m de altura");
     }
 </script>

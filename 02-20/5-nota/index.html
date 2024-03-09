@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 5</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Média - SPTech</h1>
+
+        <div class="div-input">
+            <input type="text" placeholder="Insira seu Nome" id="inp_nome">
+            <input type="number" placeholder="Insira a nota 'Continuada'" id="inp_continuada">
+            <input type="number" placeholder="Insira a nota 'Semestral'" id="inp_semestral">
+
+            <button onclick="calc()">Calcular Média</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calc() {
+        var nome = inp_nome.value;
+        var n1 = Number(inp_continuada.value);
+        var n2 = Number(inp_semestral.value);
+        
+        var media = (n1 * 0.4) + (n2 * 0.6);
+
+        alert('A média de ' + nome + ' é: ' + media);
+
+    }
+</script>

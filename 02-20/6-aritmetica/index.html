@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 6</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Operações Aritméticas</h1>
+
+        <div class="div-input">
+            <input type="number" placeholder="Insira o 1º valor" id="inp_n1">
+            <input type="number" placeholder="Insira o 2º valor" id="inp_n2">
+
+        </div>
+
+        <div class="botoes">
+            <button onclick="soma()">Soma</button>
+            <button onclick="diferenca()">Diferença</button>
+            <button onclick="produto()">Produto</button>
+            <button onclick="razao()">Razão</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function soma() {
+        var n1 = Number(inp_n1.value);
+        var n2 = Number(inp_n2.value);
+        var r = n1 + n2;
+
+        alert('A soma entre ' + n1 + ' e ' + n2 + ' é ' + r);
+
+    }
+
+    function diferenca() {
+        var n1 = Number(inp_n1.value);
+        var n2 = Number(inp_n2.value);
+        var r = n1 - n2;
+
+        alert('A diferença entre ' + n1 + ' e ' + n2 + ' é ' + r);
+
+    }
+
+    function produto() {
+        var n1 = Number(inp_n1.value);
+        var n2 = Number(inp_n2.value);
+        var r = n1 * n2;
+
+        alert('O produto entre ' + n1 + ' e ' + n2 + ' é ' + r);
+
+    }
+
+    function razao() {
+        var n1 = Number(inp_n1.value);
+        var n2 = Number(inp_n2.value);
+        var r = n1 / n2;
+
+        alert('A razão entre ' + n1 + ' e ' + n2 + ' é ' + r);
+
+    }
+</script>

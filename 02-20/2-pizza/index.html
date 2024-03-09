@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Exercício 2</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Pizzaria</h1>
+
+        <div class="div-input">
+            <input type="number" placeholder="Insira o valor da Pizza" id="inp_pizza">
+            <input type="number" placeholder="Insira a quantidade de Amigos" id="inp_amigos">
+
+            <button onclick="calc()">#LovePizza</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calc() {
+        var valorPizza = inp_pizza.value;
+        var amigos = inp_amigos.value;
+        var r = valorPizza / amigos
+
+        alert('Cada um dos ' + amigos + ' amigos vai pagar R$' + r);
+    }
+</script>
