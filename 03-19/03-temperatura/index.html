@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Temperatura</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Analisar Temperatura</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira uma Temperatura" id="inp_temp">
+
+            <button onclick="analisar()">Analisar Temperatura</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var temp = Number(inp_temp.value);
+
+
+        // VERIFICAÇÃO
+
+        if (temp < 14) {
+            mensagem.innerHTML = `<p>Congelante!</p>`;
+        }
+        else if (temp <= 21) {
+            mensagem.innerHTML = `<p>Com Frio!</p>`;
+        }
+        else if (temp <= 24) {
+            mensagem.innerHTML = `<p>Confortável!</p>`;
+        }
+        else if (temp <= 31) {
+            mensagem.innerHTML = `<p>Com Calor!</p>`;
+        }
+        else {
+            mensagem.innerHTML = `<p>Calor Escaldante!</p>`;
+        }
+
+    }
+</script>
