@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--TITLE-->
+    <title>Prova - Sprint 1</title>
+    <!--CSS-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e2eafb;
+            font-family: monospace;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .container .divInput {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .title {
+            font-size: 15px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            width: 84%;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+            background-color: #7fd3d3;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        #mensagem {
+            margin-top: 20px;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .conta {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Calcular Despesas</h1>
+
+        <div class="divinput">
+
+            <p class="title">Insira a quantidade de Energia consumida (kwh)</p>
+            <input type="number" id="inp_energia">
+
+            <p class="title">Insira a Bandeira Tárifaria (Vermelha - Amarela - Verde)</p>
+            <input type="text" id="inp_bandeira">
+
+            <p class="title">Insira a quantidade de Água consumida (litros)</p>
+            <input type="number" id="inp_agua">
+
+            <p class="title">Insira a quantidade de Vazamentos de água que tem na Casa</p>
+            <input type="number" id="inp_vazamento">
+
+            <p class="title">Insira a quantidade de Gás consumida (litros)</p>
+            <input type="number" id="inp_gas">
+
+            <p class="title">Insira a quantidade de MB (megabyte) do plano de Internet</p>
+            <input type="number" id="inp_internet">
+
+            <p class="title">Insira se possui Linha telefônica vinculada ao Plano de Internet (SIM - NÃO)</p>
+            <input type="text" id="inp_linhaTelefonica">
+
+        </div>
+
+        <button onclick="calc()">Calcular Despesas Fixas</button>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calc() {
+
+        //INPUTS
+
+        var energia = Number(inp_energia.value);
+        var bandeira = inp_bandeira.value;
+        var agua = Number(inp_agua.value);
+        var vazamento = Number(inp_vazamento.value);
+        var gas = Number(inp_gas.value);
+        var internet = Number(inp_internet.value);
+        var linhaTelefonica = inp_linhaTelefonica.value;
+
+        //DECLARANDO VARIÁVEIS
+
+        var energia_valor = 0;
+        var agua_valor = 0;
+        var gas_valor = 0;
+        var internet_valor = 0;
+        var calculo_total = 0;
+
+        //VALORES BASE PARA CALCULAR AS CONTAS
+
+        var energia_verde = 0.75;
+        var energia_amarela = 0.90;
+        var energia_vermelha = 1.0;
+
+        var agua_base = 3.50;
+
+        var gas_base = 2.50;
+
+        var internet_base = 0.80;
+
+
+        //CALCULO - ENERGIA
+
+        if (energia <= 50) {
+            energia_verde -= energia_verde * 0.10;
+            energia_amarela -= energia_amarela * 0.10;
+            energia_vermelha -= energia_vermelha * 0.10;
+        }
+
+        if (bandeira == 'Verde') {
+            energia_valor = energia * energia_verde;
+        }
+
+        if (bandeira == 'Amarela') {
+            energia_valor = energia * energia_amarela;
+        }
+
+        if (bandeira == 'Vermelha') {
+            energia_valor = energia * energia_vermelha;
+        }
+
+
+        //CALCULO - ÁGUA
+
+        if (vazamento > 0) {
+            agua_valor = agua_base * agua + (10 * vazamento);
+        } else {
+            agua_valor = agua_base * agua;
+        }
+
+
+        //CALCULO - GÁS
+
+        gas_valor = gas_base * gas;
+
+
+        //CALCULO - INTERNET
+
+        if (linhaTelefonica == 'Sim') {
+            internet_base += internet_base * 0.25;
+        }
+
+        if (linhaTelefonica == 'Não') {
+            internet_base -= internet_base * 0.075;
+        }
+
+        internet_valor = internet_base * internet;
+
+
+        //CALCULO TOTAL
+
+        calculo_total = energia_valor + agua_valor + gas_valor + internet_valor;
+
+
+        //MENSAGEM DO SISTEMA
+
+        mensagem.innerHTML = `
+        <p>Com o consumo de ${energia}kWh na bandeira ${bandeira}, a conta de Energia totaliza <span class="conta">R$${energia_valor}</span>.</p>
+        <p>Com o consumo de ${agua} litros de Água contendo ${vazamento} vazamentos, a conta de Água totaliza <span class="conta">R$${agua_valor}</spa,>.</p>
+        <p>Com o consumo de ${gas} litros de Gás, a conta de Gás totaliza <span class="conta">R$${gas_valor}<span>.</p>
+        <p>Com o consumo de ${internet} MB de Internet, o valor do Plano de Internet/Telefone totaliza <span class="conta">R$${internet_valor}</span>.</p>
+        <p>Gasto Total de despesas Mensal: <span class="conta">R$${calculo_total}</span></p>
+        `
+    }
+</script>

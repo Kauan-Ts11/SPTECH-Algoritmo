@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--TITLE-->
+    <title>Desafio</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Sistema de Táxi</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira a distancia Percorrida (Km)" id="inp_distancia">
+
+            <input type="number" placeholder="Insira o tempo de duração da Viagem (Minutos)" id="inp_duracao">
+
+            <input type="number" min="1" max="4" placeholder="Insira a quantidade de passageiros" id="inp_passageiros">
+
+            <input type="number" min="0" max="23" placeholder="Insira a hora de Inicio (0h às 23h)" id="inp_horaInicio">
+
+        </div>
+
+        <div class="botoes">
+            <button onclick="funcao()">Realizar Viagem</button>
+            <button class="encerrar" onclick="encerrarDia()">Encerrar Dia</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    //VARIÁVEIS GLOBAIS
+
+    var ht = 0;
+    var ft = 0;
+    var cc = 0;
+
+    function encerrarDia() {
+
+        ht = ht / 60;
+        var lucro = ft - cc;
+
+        mensagem.innerHTML = `
+        <p>Total de Horas Trabalhadas: ${ht}h</p>
+        <p>Faturamento Total: <span style="color: green;">$R$${ft}</span></p>
+        <p>Total de Combustível Consumido: <span style="color:red ;">R$${cc}</span></p>
+        <p>Lucro Líquido: <span style="color: green;">R$${lucro}</span></p>
+        `
+
+        if (ht > 6) {
+            mensagem.innerHTML += `<p>Você já trabalhou bastante hoje! Hora de descansar!</p>`
+
+            //ZERANDO VARIÁVEIS GLOBAIS
+
+            ht = 0;
+            ft = 0;
+            cc = 0;
+            lucro = 0;
+        } else {
+            mensagem.innerHTML += `<p>Você ainda deve trabalhar mais até cumprir sua cota do Dia!</p>`
+        }
+    }
+
+    function funcao() {
+
+        //INPUTS
+
+        var distancia = Number(inp_distancia.value);
+        var duracao = Number(inp_duracao.value)
+        var passageiros = Number(inp_passageiros.value)
+        var horaInicio = Number(inp_horaInicio.value)
+
+        //CALCULOS
+
+        //PERCURSO
+
+        var custoPercurso = distancia * 0.77;
+        var custoPercursoFInal = 0;
+        var estimativaPercurso = distancia * 1.8;
+        var percentual10 = estimativaPercurso * 0.10;
+
+        //TEMPO DA CORRIDA MAIS 10%
+
+        var estimativaMais = estimativaPercurso + percentual10;
+
+        //TEMPO DA CORRIDA MENOS 10%
+
+        var estimativaMenos = estimativaPercurso - percentual10;
+
+        //PASSAGEIROS EXTRA
+        var acompanhante = passageiros - 1;
+        var adicionalCarga = 0;
+
+        //HORÁRIO
+
+        var descontoHorario = 0;
+        var acrescimoHorario = 0;
+
+        //COMBUSTÍVEL
+
+        var quantidadeCombustivel = distancia / 12;
+        var valorCombustivel = quantidadeCombustivel * 4.00;
+
+
+        //DECIÇÕES
+
+        if (duracao >= estimativaMais) {
+            custoPercursoFInal = custoPercurso + (custoPercurso * 0.07);
+        }
+
+        if (duracao < estimativaMenos) {
+            custoPercursoFInal = custoPercurso - (custoPercurso * 0.08);
+        }
+
+        if (passageiros > 1) {
+            adicionalCarga = acompanhante * 3;
+
+        }
+
+        if (horaInicio >= 0) {
+            if (horaInicio <= 6) {
+                descontoHorario = custoPercurso * 0.09;
+            }
+        }
+
+        if (horaInicio > 20) {
+            if (horaInicio < 24) {
+                acrescimoHorario = custoPercurso * 0.11;
+            }
+        }
+
+        //VALOR A CORRIDA
+
+        var valorFinal = 0;
+
+        valorFinal = custoPercursoFInal + adicionalCarga - descontoHorario + acrescimoHorario;
+
+        //ATUALIZANDO VALORES DAS VARIÁVEIS GLOBAIS
+
+        ht += duracao;
+        ft += valorFinal;
+        cc += valorCombustivel;
+
+
+        //RESPOSTA DO SISTEMA
+
+        mensagem.innerHTML = `<p>A viagem foi iniciada às ${horaInicio}h,  tinha estimativa de ${estimativaPercurso}m e durou ${duracao}m, percorrendo ${distancia}km, com ${passageiros} passageiros, totalizando R$${valorFinal}, Com essa distância, foram consumidos ${quantidadeCombustivel} litros de gasolina, totalizando R$ ${valorCombustivel}.</p>`;
+
+    }
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Classificação dos Alunos</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Classificação de Alunos</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira a sua Nota" id="inp_nota">
+
+            <button onclick="analisar()">Classificar Aluno</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var nota = Number(inp_nota.value);
+
+
+        // VERIFICAÇÃO
+
+        if (nota < 5) {
+            mensagem.innerHTML = `<p>Aluno precisa de muita ajuda!</p>`;
+        }
+        else if (nota <= 7) {
+            mensagem.innerHTML = `<p>Aluno na média!</p>`;
+        }
+        else if (nota <= 9.5) {
+            mensagem.innerHTML = `<p>Aluno na acima da média!</p>`;
+        }
+        else {
+            mensagem.innerHTML = `<p>Aluno fora da curva!</p>`;
+        }
+
+    }
+</script>

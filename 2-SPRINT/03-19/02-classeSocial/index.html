@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Classe Social</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Analisar Classe Social</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira a Renda Familiar (mensal)" id="inp_renda">
+
+            <button onclick="analisar()">Analisar Renda</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var renda = Number(inp_renda.value);
+
+
+        // VERIFICAÇÃO
+
+        if (renda <= 250) {
+            mensagem.innerHTML = `<p>CLASSE E</p>`;
+        }
+        else if (renda <= 900) {
+            mensagem.innerHTML = `<p>CLASSE D</p>`;
+        }
+        else if (renda <= 2500) {
+            mensagem.innerHTML = `<p>CLASSE C</p>`;
+        }
+        else if (renda <= 9500) {
+            mensagem.innerHTML = `<p>CLASSE B</p>`;
+        }
+        else {
+            mensagem.innerHTML = `<p>CLASSE A</p>`;
+        }
+
+    }
+</script>

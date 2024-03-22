@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Time</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Time do Coração</h1>
+
+        <div class="divInput">
+
+            <input type="text" placeholder="Insira seu time (Corinthians - Palmeiras - São Paulo - Santos)" id="inp_time">
+
+            <button onclick="analisar()">Fale sobre esse time</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var time = inp_time.value;
+
+
+        // VERIFICAÇÃO
+
+        if (time == 'Corinthians') {
+            mensagem.innerHTML = `<p>Salve o Corinthias!</p>`;
+        }
+        else if (time == 'Palmeiras') {
+            mensagem.innerHTML = `<p>Salve o alviverde imponente!</p>`;
+        }
+        else if (time == 'São Paulo') {
+            mensagem.innerHTML = `<p>Salve o Tricolor paulista!</p>`;
+        }
+        else if (time == 'Santos') {
+            mensagem.innerHTML = `<p>Agora quem dá a bola é o Santos!</p>`;
+        }
+
+    }
+</script>

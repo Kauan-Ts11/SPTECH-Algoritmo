@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>IMC</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Peso Ideal</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira o seu Peso (kg)" id="inp_kg">
+
+            <button onclick="analisar()">Analisar Temperatura</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var peso = Number(inp_kg.value);
+
+
+        // VERIFICAÇÃO
+
+        if (peso <= 13.5) {
+            mensagem.innerHTML = `<p>Abaixo do Peso!</p>`;
+        }
+        else if (peso == 18.3) {
+            mensagem.innerHTML = `<p>Peso Perfeito!</p>`;
+        }
+        else if (peso <= 21.2) {
+            mensagem.innerHTML = `<p>Peso na Média!</p>`;
+        }
+        else if (peso > 21.2) {
+            mensagem.innerHTML = `<p>Acima do Peso!</p>`;
+        }
+
+    }
+</script>

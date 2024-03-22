@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!--METADATAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kauan Gabriel">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--TITLE-->
+    <title>Analise de Estatura</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Esporte por Altura</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira a sua Altura (metros)" id="inp_altura">
+
+            <button onclick="analisar()">Analisar Estatura</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var altura = Number(inp_altura.value);
+
+
+        // VERIFICAÇÃO
+
+        if (altura <= 1.65) {
+            mensagem.innerHTML = `<p>Você pode ser piloto de corrida!</p>`;
+        }
+        else if (altura <= 1.80) {
+            mensagem.innerHTML = `<p>Você pode ser jogador de futebol!</p>`;
+        }
+        else {
+            mensagem.innerHTML = `<p>Você pode ser jogador de vôlei ou basquete!</p>`;
+        }
+
+    }
+</script>
