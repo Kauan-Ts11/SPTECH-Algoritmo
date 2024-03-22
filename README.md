@@ -1,9 +1,10 @@
 <h1 align="center">SPTECH-Algoritmo</h1>
 
 <p align="center">
-  <img src="sptech.png" width="500">
+  <img src="sptech2.png" width="300">
 </p>
 
+#
 ### SOBRE
 
 - Repositório que abriga o desenvolvimento de atividades da matéria de Algoritmo.
