@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Classificação de Aluno</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Classificação de Aluno</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira sua Nota" id="inp_nota">
+            <input type="number" placeholder="Insira sua Frequencia" id="inp_frequencia">
+
+            <button onclick="analisar()">Avaliar Aluno</button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        //INPUTS
+
+        var nota = Number(inp_nota.value);
+        var frequencia = Number(inp_frequencia.value);
+
+
+        //VERIFICAÇÕES
+
+        if (nota >= 6 && frequencia >= 75) {
+            alert(`Parabéns! Aprovado!`);
+        }
+        else {
+            alert(`Infelizmente, não foi desta vez!`);
+        }
+
+    }
+
+</script>

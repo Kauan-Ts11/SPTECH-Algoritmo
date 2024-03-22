@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Netflix</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Pesquisa - Netflix</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira o horário que você utiliza a Netflix" id="inp_horario">
+
+            <button onclick="analisar()">Ver Recomendação</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        //INPUTS
+
+        var horario = Number(inp_horario.value);
+
+
+        //VERIFICAÇÕES
+
+        if (horario >= 19 && horario <= 21) {
+            mensagem.innerHTML = `<p>Não é recomendável que você assista sua série favorita no horário <span class="menor">${horario}h</span>!</p>`;
+        }
+        else {
+            mensagem.innerHTML = `<p>O horário <span class="maior">${horario}h</span> é adequado para assistir sua série favorita!</p>`;
+        }
+
+    }
+
+</script>
