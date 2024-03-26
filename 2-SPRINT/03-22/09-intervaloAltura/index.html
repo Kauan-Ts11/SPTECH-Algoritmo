@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura - Pilotos</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Recrutamento de Pilotos</h1>
+
+        <div class="divInput">
+            <input type="number" placeholder="Altura Inicial da Seleção (metros)" id="inp_alturaInicio">
+            <input type="number" placeholder="Altura Final da Seleção (metros)" id="inp_alturaFinal">
+            <input type="text" placeholder="Nome do Candidato" id="inp_nome">
+            <input type="number" placeholder="Altura do Candidato (metros)" id="inp_altura">
+
+            <button onclick="verificar()">Verificar Candidato</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function verificar() {
+
+        // INPUTS
+
+        var alturaInicio = Number(inp_alturaInicio.value);
+        var alturaFinal = Number(inp_alturaFinal.value);
+        var nome = inp_nome.value;
+        var altura = Number(inp_altura.value);
+
+
+        // VERIFICAÇÕES
+
+        // VERIFICAÇÕES - VERIFICA SE ALTURA DO CANDIDATO É >= 1, ALTURA INICIAL É >= 1 E SE ALTURA FINAL É MAIOR QUE A ALTURA INICIAL
+
+        if (altura >= 1 && alturaInicio >= 1 && alturaFinal >= alturaInicio) {
+
+            // VERIFICA SE A ALTURA DO CANDIDATO ESTÁ NO INTERVALO DETERMINADO 
+
+            if (altura >= alturaInicio && altura <= alturaFinal) {
+                mensagem.innerHTML = `<p>O candidato ${nome}, com altura de <span class="maior">${altura} metros</span>, participará do processo de seleção de piloto</p>`;
+            }
+
+            // CENÁRIO CONTRÁRIO
+
+            else {
+                mensagem.innerHTML = `<p>Infelizmente, o candidato ${nome}, com altura de <span class="menor">${altura} metros</span>, não atende os requisitos da seleção</p>`;
+            }
+        }
+
+        // CENÁRIO CONTRÁRIO
+
+        else {
+            alert("Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial.");
+            mensagem.innerHTML = "";
+        }
+
+    }
+
+</script>    

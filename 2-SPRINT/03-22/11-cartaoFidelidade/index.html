@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Cartão Fidelidade</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Cartão Fidelidade</h1>
+
+        <div class="divInput">
+
+            <p>Insira quantas passagens deseja Adquirir</p>
+            <input type="number" placeholder="Ex.: 16" id="inp_quantidade">
+
+            <button onclick="comprar()">Comprar</button>
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function comprar() {
+
+
+        // INPUTS
+
+        var quantidade = Number(inp_quantidade.value);
+
+
+        // VALOR BASE DA PASSAGEM
+
+        var passagem_base = 4.40;
+
+        // DECLARANDO VARIÁVEIS
+
+        var passagem_valor = 0;
+        var valorFinal = 0;
+
+
+        // VERIFICAÇÕES
+
+        if (quantidade >= 8 && quantidade <= 50) {
+
+            // QUANTIDADE ENTRE 8 E 19 - 3%  DE DESCONTO
+
+            if (quantidade >= 8 && quantidade <= 19) {
+                passagem_base *= 0.97;
+            }
+
+            // QUANTIDADE ENTRE 20 E 49 - 5%  DE DESCONTO
+
+            else if (quantidade >= 20 && quantidade <= 49) {
+                passagem_base *= 0.95;
+            }
+
+            // QUANTIDADE IGUAL A 50 - 7%  DE DESCONTO
+
+            else if (quantidade === 50) {
+                passagem_base *= 0.93;
+            }
+
+
+            // VALOR DA COMPRA
+
+            passagem_valor = passagem_base * quantidade;
+
+            valorFinal = passagem_valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+
+            // RETORNO AO USUÁRIO
+
+            mensagem.innerHTML = `<p>Total a pagar é <span class="menor">${valorFinal}</span></p>`;
+
+        }
+        else {
+            alert("Quantidade inválida para o Fidelidade");
+        }
+
+    }
+
+</script>

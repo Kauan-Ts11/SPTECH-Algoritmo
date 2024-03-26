@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Salário</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Salário</h1>
+
+        <div class="divInput">
+            <p>Insira sua Idade</p>
+            <input type="number" placeholder="Ex.: 18" id="inp_idade">
+            <p>Insira o seu Salário</p>
+            <input type="number" placeholder="Ex.: 1200" id="inp_salario">
+
+            <button onclick="analisar()">Analisar Situação</button>
+        </div>
+
+        <div id="mensagem"></div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var idade = Number(inp_idade.value);
+        var salario = Number(inp_salario.value);
+
+
+        // VERIFICAÇÕES
+
+        if (idade < 18 && salario < 2500) {
+            mensagem.innerHTML = `<p class="menor">Menor de idade e Liso</p>`;
+        }
+        else if (idade < 18 && salario >= 2500) {
+            mensagem.innerHTML = `<p class="maior">Menor de idade e Ostentação</p>`;
+        }
+        else if (idade >= 18 && salario < 3500 ) {
+            mensagem.innerHTML = `<p class="menor">Maior de idade e Liso</p>`;
+        }
+        else if (idade >= 18 && salario >= 3500 && salario <= 7000) {
+            mensagem.innerHTML = `<p class="maior">Maior de idade e Ostentação</p>`;
+        }
+        else if (idade >= 18 && salario > 7000) {
+            mensagem.innerHTML = `<p class="maior">Maior de idade e Mega Ostentação</p>`;
+        }
+
+    }
+
+</script>
