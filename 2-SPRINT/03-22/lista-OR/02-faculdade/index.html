@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 02</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Processo Seletivo</h1>
+
+        <div class="divInput">
+
+            <p>Insira sua Nota do Enem</p>
+            <input type="number" placeholder="Ex.: 650" id="inp_enem">
+
+            <p>Insira sua nota do Vestibular Interno</p>
+            <input type="number" placeholder="Ex.: 500" id="inp_interno">
+
+            <button onclick="avaliar()">Avaliação</button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function avaliar() {
+
+        // INPUTS
+
+        var enem = Number(inp_enem.value);
+        var interno = Number(inp_interno.value);
+
+
+        // VERIFICAÇÕES
+
+        if (enem >= 800 || interno >= 700) {
+            alert("Parabéns! Aprovado");
+        }
+        else {
+            alert("Tente semestre que vem!");
+        }
+
+    }
+
+</script>

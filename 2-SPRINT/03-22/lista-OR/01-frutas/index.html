@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 01</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Frutas</h1>
+
+        <div class="divInput">
+
+            <p>Insira o nome da Fruta</p>
+            <input type="text" placeholder="Ex.: Abacaxi ou Uva" id="inp_fruta">
+
+            <button onclick="analisar()">Vai comer?</button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+        
+        // INPUTS
+
+        var fruta = inp_fruta.value;
+
+
+        // VERIFICAÇÕES
+
+        if (fruta == 'Abacaxi' || fruta == 'Uva') {
+            alert(`Sim, vai comer ${fruta}`);
+        }
+        else {
+            alert(`A fruta ${fruta} ela não come`);
+        }
+
+    }
+
+</script>
