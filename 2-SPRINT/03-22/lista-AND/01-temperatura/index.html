@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Temperatura</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Temperatura</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira a Temperatura" id="inp_temp">
+
+            <button onclick="analisar()">Analisar Temperatura</button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        //INPUTS
+
+        var temp = Number(inp_temp.value);
+
+
+        //VERIFICAÇÕES
+
+        if (temp >= 21 && temp <= 24) {
+            alert(`Temperatura Confortável`);
+        }
+        else {
+            alert(`Temperatura Desconfortável`);
+        }
+
+    }
+
+</script>

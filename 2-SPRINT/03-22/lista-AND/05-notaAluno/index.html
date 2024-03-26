@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Avaliar Aluno</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Avaliar Aluno</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira sua Nota" id="inp_nota">
+
+            <button onclick="analisar()">Avaliar Aluno</button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        //INPUTS
+
+        var nota = Number(inp_nota.value);
+
+
+        //VERIFICAÇÕES
+
+        if (nota >= 0 && nota < 6) {
+            alert("Aluno não Aprovado!");
+        }
+        else if (nota >= 6 && nota < 8.5) {
+            alert("Aluno comum e Aprovado!");
+        }
+        else if (nota >= 8.5 && nota <= 10) {
+            alert("Aluno Exemplar!");
+        }
+        else {
+            alert(`Nota '${nota}' Inválida!`);
+        }
+
+    }
+
+</script>

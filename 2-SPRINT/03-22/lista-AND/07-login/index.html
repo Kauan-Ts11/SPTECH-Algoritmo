@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Login</h1>
+
+        <div class="divInput">
+
+            <input type="text" placeholder="Insira seu nome de Usuario" id="inp_usuario">
+            <input type="password" placeholder="Insira sua Senha" id="inp_senha">
+           
+
+            <button onclick="analisar()">Entrar</button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        //INPUTS
+
+        var login = inp_usuario.value;
+        var senha = inp_senha.value;
+
+
+        //VERIFICAÇÕES
+
+        if (login == 'SPTech' && senha == 'digital') {
+            alert(`Usuário autenticado com Sucesso!`);
+        }
+        else {
+            alert(`Falha na Autenticação!`);
+        }
+
+    }
+
+</script>

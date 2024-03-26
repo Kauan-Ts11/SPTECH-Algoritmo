@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Covid19</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Análise de Auxilio</h1>
+
+        <div class="divInput">
+
+            <input type="number" placeholder="Insira sua Renda Mensal" id="inp_renda">
+            <input type="number" placeholder="Insira a Renda Familiar" id="inp_rendaFamiliar">
+
+            <button onclick="analisar()">Verificar Ajuda</button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        //INPUTS
+
+        var renda = Number(inp_renda.value);
+        var rendaF = Number(inp_rendaFamiliar.value);
+
+
+        //VERIFICAÇÕES
+
+        if (renda <= 1050  && rendaF <= 2100) {
+            alert(`Você terá Direito!`);
+        }
+        else {
+            alert(`Você NÃO terá Direito!`);
+        }
+
+    }
+
+</script>
