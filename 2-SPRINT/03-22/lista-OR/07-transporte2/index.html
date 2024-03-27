@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 07</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Calculadora de cansaço aprimorada do aluno SPTech</h1>
+
+        <div class="divInput">
+
+            <p>Meio de Transporte</p>
+            <input type="text" placeholder="Ex.: Ônibus - Metrô - Carro - Bicicleta" id="inp_transporte">
+
+            <p>Distância da Faculdade (Km) </p>
+            <input type="number" placeholder="Ex.: 10" id="inp_km">
+
+            <button onclick="analisar()">Calcular Cansaço</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var transporte = inp_transporte.value;
+        var km = Number(inp_km.value);
+
+
+        // VERIFICAÇÕES 
+
+        // VERIFICA SE KM É <= 10 E O TRANSPORTE É IGUAL A (CARRO - METRÔ - ÔNIBUS) - O OPERADOR && OBRIGA QUE AS DUAS CONDIÇÕES SEJAM VERDADEIRAS
+
+        if ((km <= 10) && (transporte == 'Carro' || transporte == 'Metrô' || transporte == 'Ônibus')) {
+            alert("Tá tranks...");
+        }
+
+        // CENÁRIO CONTRÁRIO - KM > 10 (POR SER A PRIMEIRA VERIFICAÇÃO, SE DER FALSE, NÃO VERIFICA O MEIO DE TRANSPORTE, POR CONTA DO OPERADOR && )
+
+        else {
+            if (transporte == 'Carro') {
+                alert("É... um pouco Cansado...");
+            }
+            else if (transporte == 'Metrô') {
+                alert("Bem Cansado...");
+            }
+            else if (transporte == 'Ônibus') {
+                alert("Vish... tá só o Pó...");
+            }
+        }
+
+    }
+
+</script>

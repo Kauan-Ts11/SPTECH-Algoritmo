@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 06</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Transporte</h1>
+
+        <div class="divInput">
+
+            <select id="s_transporte">
+                <option value="#" class="selecionar">Selecione o meio de Transporte</option>
+                <option value="onibus">Ônibus</option>
+                <option value="metro">Metrô</option>
+                <option value="carro">Carro</option>
+                <option value="bicicleta">Bicicleta</option>
+                <option value="uber">Uber</option>
+
+            </select>
+
+            <button onclick="analisar()">Calcular Cansaço</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var transporte = s_transporte.value;
+
+
+        // VERIFICAÇÕES 
+
+        if (transporte == 'carro' || transporte == 'uber') {
+            alert("Tá tranquilo...");
+        }
+        else if (transporte == 'metro' || transporte == 'onibus') {
+            alert("Um pouco cansado.");
+        }
+        else if (transporte == 'bicicleta') {
+            alert("Vish... vive cansado.");
+        }
+
+    }
+
+</script>

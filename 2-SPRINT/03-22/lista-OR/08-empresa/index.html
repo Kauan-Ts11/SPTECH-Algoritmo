@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 08</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Empresa</h1>
+
+        <div class="divInput">
+
+            <p>Insira o nome da Empresa</p>
+            <input type="text" placeholder="Ex.: SPTech" id="inp_empresa">
+
+            <p>Insira o valor da Bolsa da Empresa</p>
+            <input type="number" placeholder="Ex.: 1200" id="inp_bolsa">
+
+            <p>Insira o valor do VR</p>
+            <input type="number" placeholder="Ex.: 20" id="inp_vr">
+
+            <p>Insira o tempo de Deslocamento da Empresa até a SPTech</p>
+            <input type="number" placeholder="Ex.: 30 (minutos)" id="inp_tempo">
+
+            <button onclick="analisar()">É Preferida?</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var empresa = inp_empresa.value;
+        var bolsa = Number(inp_bolsa.value);
+        var vr = Number(inp_vr.value);
+        var tempo = Number(inp_tempo.value);
+
+
+        // VERIFICAÇÕES 
+
+        if (bolsa >= 1800 || vr >= 20 || tempo <= 30) {
+            mensagem.innerHTML = `<p class="maior">A empresa ${empresa} é uma de suas preferências!</p>`;
+        }
+        else {
+            mensagem.innerHTML = `<p class="menor">A empresa ${empresa} está fora da sua lista!</p>`;
+        }
+
+    }
+
+</script>

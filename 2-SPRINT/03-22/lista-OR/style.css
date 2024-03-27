@@ -71,3 +71,15 @@ button {
 .maior {
     color: green;
 }
+
+select {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.selecionar {
+    color: rgb(186, 181, 181);
+}

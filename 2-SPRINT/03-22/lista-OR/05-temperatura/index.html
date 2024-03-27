@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 05</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Temperatura Ideal</h1>
+
+        <div class="divInput">
+
+            <p>Insira a Temperatura atual</p>
+            <input type="number" placeholder="Ex.: 21" id="inp_temp">
+
+            <button onclick="analisar()">Analisar Clima</button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var temp = Number(inp_temp.value);
+
+
+        // VERIFICAÇÕES 
+
+        // VERIFICA SE A TEMPERATURA ESTÁ FORA DA ZONA DE CONFORTO
+
+        if (temp < 21 || temp > 24) {
+
+            alert("Alerta de Desconforto!");
+
+            // VERIFICA SE A TEMPERATURA É MENOR QUE 21 PARA LANÇAR UMA MENSAGEM PERSONALIZADA
+
+            if (temp < 21) {
+                alert("As pessoas vão ter hipotermia!");
+            }
+
+            // CENÁRIO CONTRÁRIO - SE NÃO < 21, AUTOMATICAMENTE SERÁ > 24
+
+            else {
+                alert("As pessoas vão derreter!");
+            }
+            
+        }
+
+        // NÃO É NECESSÁRIO UM ELSE, JÁ QUE O SISTEMA NÃO EXECUTARÁ NENHUMA AÇÃO SE A TEMPERATURA ESTIVER CONFORTÁVEL
+
+    }
+
+</script>

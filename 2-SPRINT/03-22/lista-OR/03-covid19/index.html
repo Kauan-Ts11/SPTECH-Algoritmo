@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 03</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Auxílio Emergêncial</h1>
+
+        <div class="divInput">
+
+            <p>Insira sua Renda Individual</p>
+            <input type="number" placeholder="Ex.: 1800" id="inp_individual">
+
+            <p>Insira sua Renda Familiar</p>
+            <input type="number" placeholder="Ex.: 2000" id="inp_familiar">
+
+            <button onclick="analisar()">Terei o Benefício</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var individual = Number(inp_individual.value);
+        var familiar = Number(inp_familiar.value);
+
+
+        // VERIFICAÇÕES 
+
+        if (individual <= 2000 || familiar <= 3000) {
+            mensagem.innerHTML = `<p class="maior">Você terá direito ao Auxílio!</p>`;
+        }
+        else {
+            mensagem.innerHTML = `<p class="menor">Sem direito ao Auxílio!</p>`;
+        }
+
+    }
+
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 04</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Pagamento</h1>
+
+        <div class="divInput">
+
+            <select id="s_pagamento">
+                <option value="#" class="selecionar">Método de Pagamento</option>
+                <option value="dinheiro" class="menor">Dinheiro</option>
+                <option value="debito" class="menor">Cartão de Débito</option>
+                <option value="credito" class="maior">Cartão de Crédito</option>
+                <option value="boleto" class="maior">Boleto</option>
+            </select>
+            
+            <button onclick="analisar()">Analisar Compra</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var pagamento = s_pagamento.value;
+
+
+        // VERIFICAÇÕES 
+
+        if (pagamento == 'dinheiro' || pagamento ==  'debito') {
+            mensagem.innerHTML = `<p>Você terá que pagar a Vista!</p>`;
+        }
+        else if (pagamento == 'credito' || pagamento == 'boleto') {
+            mensagem.innerHTML = `<p>Pagamento poderá ser Parcelado!</p>`;
+        }
+        else {
+            alert ("Selecione método de Pagamento");
+            mensagem.innerHTML = '';
+        }
+
+    }
+
+</script>
