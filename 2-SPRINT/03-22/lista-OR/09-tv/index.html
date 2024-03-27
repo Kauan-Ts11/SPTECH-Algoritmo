@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 09</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>TV</h1>
+
+        <div class="divInput">
+
+            <select id="inp_marca">
+                <option value="#">Selecione a Marca</option>
+                <option value="Samsung">Samsung</option>
+                <option value="LG">LG</option>
+                <option value="Mondial">Mondial</option>
+                <option value="Britania">Britania</option>
+            </select>
+
+            <p>Insira o valor da TV</p>
+            <input type="number" placeholder="Ex.: 1200" id="inp_valor">
+
+            <button onclick="analisar()">Analisar Compra</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var marca = inp_marca.value;
+        var valor = Number(inp_valor.value);
+
+
+        // VERIFICAÇÕES
+
+        // VERIFICA SE O VALOR ESTÁ FORA DA FAIXA DE PREÇO (>= 800 E <= 2000)
+
+        if (valor < 800 || valor > 2000) {
+            mensagem.innerHTML = `<p>TV fora da faixa de Preço!</p>`;
+
+            // VERIFICA SE O VALOR É < 800 PARA LANÇAR MENSAGEM PERSONALIZADA
+
+            if (valor < 800) {
+                mensagem.innerHTML += `<p>Preço baixo demais!</p>`;
+            }
+
+            // CENÁRIO CONTRÁRIO - SE NÃO FOR < 800, AUTOMATICAMENTE É > 2000
+
+            else {
+                mensagem.innerHTML += `<p>TV cara demias, infelizmente</p>`;
+            }
+
+        }
+
+        // VERIFICA SE O VALOR ESTÁ NA FAIXA E SE A MARCA É MONDIAL OU BRITANIA
+
+        else if ((valor >= 800 && valor <= 2000) && marca == 'Mondial' || marca == 'Britania') {
+            mensagem.innerHTML = `<p>Na faixa de Preço, porém, marca não confiável!</p>`;
+        }
+
+        // VERIFICA SE O VALOR ESTÁ NA FAIXA E SE A MARCA É SAMSUNG OU LG
+
+        else if ((valor >= 800 && valor <= 2000) && marca == 'Samsung' || marca == 'LG') {
+            mensagem.innerHTML = `<p>Essa TV pode entrar na sua Lista!</p>`;
+        } 
+
+    }
+
+</script>
