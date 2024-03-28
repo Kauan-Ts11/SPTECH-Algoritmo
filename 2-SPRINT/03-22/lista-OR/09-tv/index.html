@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Exercício 09</title>
 </head>
+
 <body>
-    
+
     <div class="container">
 
         <h1>TV</h1>
@@ -30,10 +32,11 @@
         </div>
 
         <div id="mensagem"></div>
-        
+
     </div>
 
 </body>
+
 </html>
 
 <script>
@@ -67,17 +70,21 @@
 
         }
 
-        // VERIFICA SE O VALOR ESTÁ NA FAIXA E SE A MARCA É MONDIAL OU BRITANIA
+        // CENÁRIO CONTRÁRIO 1 - SE NÃO É < 800 OU > 2000, ENTÃO É >= 800 E <= 2000
 
-        else if ((valor >= 800 && valor <= 2000) && marca == 'Mondial' || marca == 'Britania') {
+        // VERIFICA SE A MARCA É MONDIAL OU BRITANIA
+
+        else if (marca == 'Mondial' || marca == 'Britania'){
+
             mensagem.innerHTML = `<p>Na faixa de Preço, porém, marca não confiável!</p>`;
+
         }
 
-        // VERIFICA SE O VALOR ESTÁ NA FAIXA E SE A MARCA É SAMSUNG OU LG
+        // CENÁRIO CONTRÁRIO 2 - SE MARCA FOR DIFERENTE DE "MONDIAL" OU "BRITANIA"
 
-        else if ((valor >= 800 && valor <= 2000) && marca == 'Samsung' || marca == 'LG') {
+        else {
             mensagem.innerHTML = `<p>Essa TV pode entrar na sua Lista!</p>`;
-        } 
+        }
 
     }
 
