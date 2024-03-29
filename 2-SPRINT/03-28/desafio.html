@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Kauan Gabriel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- TITLE -->
+    <title>Desafio</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Divisão de Lucros</h1>
+
+        <div class="divInput">
+
+            <p>Insira o valor de saque que já Realizou</p>
+            <input type="number" placeholder="Ex.: 1200" min="0" id="inp_historico">
+
+            <p>Insira quanto deseja Sacar</p>
+            <input type="number" placeholder="Ex.: 2000" min="1" id="inp_saque">
+
+            <button onclick="calcular()">Calcular</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        // INPUTS
+
+        var historico = Number(inp_historico.value);
+        var saque = Number(inp_saque.value);
+
+
+        // DECLARANDO VARIÁVEIS
+
+        var jogador = 0;
+        var time = 0;
+        var deal;
+
+
+        // VERIFICAÇÕES
+
+        // VERIFICA SE O VALOR DE SAQUE ANTERIOR É < 2500, SE VERDADEIRO, 60/40 - TIME/JOGADOR
+
+        if (historico < 2500) {
+            time = saque * 0.60;
+            jogador = saque * 0.40;
+            deal = '60/40';
+        }
+
+
+        // VERIFICA SE O VALOR DE SAQUE ANTERIOR É >= 2500 E <= 5000, SE VERDADEIRO, 55/45 - TIME/JOGADOR
+
+        else if (historico >= 2500 && historico <= 5000) {
+            time = saque * 0.55;
+            jogador = saque * 0.45;
+            deal = '55/45'
+        }
+
+
+        // CENÁRIO CONTRÁRIO - SE NÃO <= 5000, AUTOMATICAMENTE SERÁ > 5000, SE VERDADEIRO, 50/50 - TIME/JOGADOR
+
+        else {
+            time = saque * 0.50;
+            jogador = saque * 0.50;
+            deal = '50/50'
+        }
+
+
+        // MASCARA DE REAL BRASILEIRO (R$ 1.000,00)
+
+        time = time.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        jogador = jogador.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        saque = saque.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+
+        // MENSAGEM DO SISTEMA AO USUÁRIO
+
+        mensagem.innerHTML = `<p>O seu Deal é de ${deal}, e voce quer sacar ${saque} , sendo assim a parte do time é de <span class="menor">${time}</span> e a sua parte é de <span class="maior">${jogador}</span>.</p>`;
+
+    }
+
+</script>
