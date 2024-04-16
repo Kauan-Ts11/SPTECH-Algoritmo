@@ -44,6 +44,14 @@ input {
     outline: none;
 }
 
+select {
+    width: 84%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
 button {
     width: 84%;
     border: none;
@@ -58,6 +66,10 @@ button {
     text-align: center;
     margin-top: 20px;
     font-size: 15px;
+}
+
+img {
+    width: 300px;
 }
 
 #mensagem p {

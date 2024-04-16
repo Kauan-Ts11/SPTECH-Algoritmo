@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 06</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Desempenho do Aluno</h1>
+
+        <div class="divInput">
+
+            <p>Insira sua Nota</p>
+            <input type="number" placeholder="Ex.: 10" id="inp_nota">
+
+            <p>Insira sua Frequência</p>
+            <input type="number" placeholder="Ex.: 76" id="inp_frequencia">
+
+            <button onclick="analisar()">Analisar Aluno</button>
+
+        </div>
+
+       <div id="mensagem"></div> 
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+        
+
+        // INPUTS
+
+        var nota = Number(inp_nota.value);
+        var frequencia = Number(inp_frequencia.value);
+
+
+        // VERIFICAÇÕES
+
+        if ((nota >= 0 && nota <= 10) && (frequencia >= 0 && frequencia <= 100)) {
+
+            if (nota < 6) {
+                
+                mensagem.innerHTML = `<p>Aluno ficou abaixo da Média!</p>`;
+
+            }
+
+            else if (nota <= 8) {
+            
+            mensagem.innerHTML = `<p>Aluno ficou na Média!</p>`;
+
+            }
+
+            else {
+            
+            mensagem.innerHTML = `<p>Aluno acima da Média!</p>`;
+            
+            }
+
+            if (frequencia >= 75) {
+                
+                mensagem.innerHTML += `<p>Aluno Aprovado por Frequência!</p>`;
+
+            }
+
+            else {
+
+                mensagem.innerHTML += `<p>Aluno reprovado por Frequência!</p>`;
+            }
+ 
+
+        }
+
+        else {
+
+            alert('Onde já se viu Nota < 0 || > 10 ou frequencia < 0 || > 100! ');
+
+            inp_nota.value = '';
+            inp_frequencia.value = '';
+            mensagem.innerHTML = '';
+
+        }
+
+    }
+
+
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 02</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Tinder</h1>
+
+        <div class="divInput">
+
+            <p>Insira sua altura</p>
+            <input type="number" placeholder="Ex.: 1.65" id="inp_altura">
+
+            <select id="s_cabelo">
+                <option value="#">Selecione a Cor do Cabelo</option>
+                <option value="Preto">Preto</option>
+                <option value="Vermelho">Vermelho</option>
+                <option value="Amarelo">Amarelo</option>
+                <option value="Castanho">Castanho</option>
+            </select>
+
+            <button onclick="analisar()">Deu Match?</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+        
+        // INPUTS
+
+        var altura = Number(inp_altura.value);
+        var cabelo = s_cabelo.value;
+
+
+        // VERIFICAÇÕES
+
+        if (altura < 1.85 && (cabelo == 'Amarelo' || cabelo == 'Castanho')) {
+            mensagem.innerHTML = `<img src="images/feliz.png" alt="">`;
+        }
+        else {
+            mensagem.innerHTML = `<img src="images/triste.png" alt="">`;
+        }
+
+    }
+
+</script>

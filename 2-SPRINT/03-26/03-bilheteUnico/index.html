@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 03</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Bilhete Único</h1>
+
+        <div class="divInput">
+
+            <select id="s_passageiro">
+                <option value="#">Selecione seu tipo</option>
+                <option value="Comun">Comun</option>
+                <option value="Estudante">Estudante</option>
+                <option value="Idoso">Idoso/PNE</option>
+            </select>
+
+            <Select id="s_passagem">
+                <option value="#">Selecione o tipo da Passagem</option>
+                <option value="Unica">Passagem Única</option>
+                <option value="Integracao">Passagem Integração</option>
+            </Select>
+
+            <button onclick="simular()">Simular Preço</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function simular() {
+
+        // INPUTS
+
+        var passageiro = s_passageiro.value;
+        var passagem = s_passagem.value;
+
+
+        // VALORES BASE
+
+        var baseUnica = 4.40;
+        var baseIntegracao = 5.90
+
+
+        // VARIAVEIS
+
+        var valor = 0;
+
+
+        // VERIFICAÇÕES
+
+
+        // VERIFICA SE FOI SELECIONADO ALGUM TIPO DE PASSAGEIRO E TIPO DE PASSAGEM
+
+        if (passageiro != '#' && passagem != '#') {
+
+
+            // 1º CENARIO - VERIFICA SE O PASSAGEIRO = 'COMUN'
+
+            if (passageiro == 'Comun') {
+
+                // VERIFICA A BASE DA PASSAGEM (UNICA - INTEGRACAO)
+                
+                if (passagem == 'Unica') {
+                    
+                    valor = baseUnica;
+
+                }
+
+                else {
+                    valor = baseIntegracao;
+                }
+
+            }
+
+
+            // 2º CENARIO - VERIFICA SE O PASSAGEIRO = 'ESTUDANTE'
+
+            else if (passageiro == 'Estudante') {
+
+                // VERIFICA A BASE DA PASSAGEM (UNICA - INTEGRACAO)
+
+                if (passagem == 'Unica') {
+                    
+                    valor = baseUnica * 0.5;
+
+                }
+
+                else {
+
+                    valor = baseIntegracao * 0.5;
+
+                }
+
+            }
+
+
+            // CENARIO CONTRÁRIO - SE NÃO FOR COMUN OU ESTUDANTE, SERÁ IDOSO
+
+            else {
+
+                valor = 0
+
+            }
+
+
+            // MENSAGEM DO SISTEMA
+
+            mensagem.innerHTML = `<p>Valor da passagem escolhida: R$${valor}</p>`;
+        }
+
+
+        // CENARIO CONTRÁRIO - PEDE PARA SER SELECIONADO UM TIPO DE PASSAGEIRO E PASSAGEM
+
+        else {
+
+            alert('Selecione um Tipo de Passageiro e sua Passagem!')
+
+        }
+ 
+    }
+
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 04</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Banco Melete</h1>
+
+        <div class="divInput">
+
+            <p>Insira seu nome de Usuário</p>
+            <input type="text" placeholder="Ex.: Kauan" id="inp_usuario">
+
+            <p>Insira sua Senha</p>
+            <input type="password" placeholder="Ex.: *****" id="inp_senha">
+
+            <p>Inisira sua Informação pessoal</p>
+            <input type="text" placeholder="Ex: ...." id="inp_pessoal">
+
+            <button onclick="autenticar()">Autenticar</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function autenticar() {
+
+
+        // INPUTS
+        
+        var usuario = inp_usuario.value;
+        var senha = inp_senha.value;
+        var pessoal = inp_pessoal.value;
+
+
+        // VERIFICAÇÕES
+
+
+        // VERIFICA SE OS VALORES DE USUÁRIO, SENHA E INFORMAÇÃO PESSOAL SÃO == AOS DEFINIDOS NO SISTEMA
+
+        if(usuario == 'ana' && senha == 'braga' && (pessoal == '1949' || pessoal == 'louro josé')) {
+
+            mensagem.innerHTML = `<p>Usuário Autenticado!</p>`;
+
+        }
+
+        // CENÁRIO CONTRÁRIO - PELO MENOS 1 INFORMAÇÃO NÃO É VERDADEIRA 
+
+        else {
+
+            mensagem.innerHTML = `<p>Falha na Autenticação!</p>`;
+
+        }
+        
+    }
+
+</script>

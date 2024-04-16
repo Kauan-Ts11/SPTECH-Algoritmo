@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <title>Exercício 01</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Sistema de Avaliação de Atendimento</h1>
+
+        <div class="divInput">
+
+            <p>Insira a nota para o Atendimento</p>
+            <input type="number" placeholder="Ex.: 0 - 10" id="inp_nota">
+
+            <button onclick="analisar()">Avaliar Atendimento</button>
+
+        </div>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        // INPUTS
+
+        var nota = Number(inp_nota.value);
+
+
+        // VERIFICAÇÕES
+
+        if (nota >= 0 && nota <=10) {
+
+            if (nota < 5) {
+                mensagem.innerHTML = `<p class="menor">Não Aprovado!</p>`;
+            }
+
+            else if (nota >= 5 && nota <= 6) {
+                mensagem.innerHTML = `<p>Neturo!</p>`;
+            }
+            
+            else {
+                mensagem.innerHTML = `<p class="maior">Aprovado!</p>`;
+            }
+            
+        }
+        else {
+        mensagem.innerHTML = `<p class="menor">Nota Inválida!</p>`;
+        }
+
+    }
+
+</script>
