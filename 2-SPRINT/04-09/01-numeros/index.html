@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 01</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Estrutura de Repetição</h1>
+
+        <div class="divInput">
+
+            <button onclick="contar()">Contar...</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function contar() {
+        
+        
+        // ESTRUTURA DE REPETIÇÃO
+
+        for (let i = 1; i <= 15; i++) {
+            
+            output.innerHTML += `<p>${i}</p>`;
+
+        }
+
+    }
+
+</script>
