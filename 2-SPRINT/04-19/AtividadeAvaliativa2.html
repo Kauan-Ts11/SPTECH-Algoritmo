@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Atividade Avaliativa II</title>
+</head>
+
+<body>
+
+    <span>Episódio que deseja começar assistindo: </span>
+    <input type="number" placeholder="Ex.: 11" id="inp_episodios"> <br>
+
+    <span>Quantidade de tempo disponível: </span>
+    <input type="number" placeholder="Ex.: 45" id="inp_tempo"> <br>
+
+    <span>Unidade de tempo em: </span>
+    <select id="s_tempo">
+        <option value="#">Selecione uma opção</option>
+        <option value="Horas">Horas</option>
+        <option value="Minutos">Minutos</option>
+    </select> <br>
+
+    <span>Pular abertura? </span>
+    <select id="s_abertura">
+        <option value="#">Selecione uma opção</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+    </select> <br>
+
+    <span>Pular encerramento</span>
+    <select id="s_encerramento">
+        <option value="#">Selecione uma opção</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+    </select> <br>
+
+    <button onclick="assistir()">Assstir Episódios</button>
+
+    <div id="output"></div>
+
+
+</body>
+
+</html>
+
+<script>
+
+
+    function assistir() {
+
+
+        // INPUTS
+
+        var episodioInicio = Number(inp_episodios.value);
+        var tempoDisponivel = Number(inp_tempo.value);
+        var unidadeTempo = s_tempo.value;
+        var abertura = s_abertura.value;
+        var encerramento = s_encerramento.value;
+
+
+        // VARIAVEIS
+
+        var mensagemEpisodio = '';
+
+        var tempoEpisodio = 24;
+        var tempoMinutos = 0;
+        var episodios = 0;
+
+
+        // VERIFICAÇÕES
+
+        // CENÁRIO VERDADEIRO - VERIFICA SE O EPISÓDIO ESTÁ ENTRE 1 E 1100
+
+        if (episodioInicio > 0 && episodioInicio <= 1100) {
+
+
+            // VERIFICA SE FOI SELECIONADO UMA UNIDADE DE TEMPO, SE VAI PULAR A ABERTURA E ENCERRAMENTO
+
+            if (unidadeTempo != '#' && abertura != '#' && encerramento != '#') {
+
+
+                // VERIFICA QUAL UNIDADE DE TEMPO FOI SELECIONADA, E CONVERTE O TEMPO PARA A UNIDADE ESCOLHIDA
+
+                if (unidadeTempo == 'Horas') {
+
+                    tempoMinutos = tempoDisponivel * 60;
+
+                }
+
+                else {
+
+                    tempoMinutos = tempoDisponivel;
+
+                }
+
+
+                // VERIFICA SE VAI PULAR A ABERTURA E O ENCERRAMENTO
+
+                if (abertura == 'Sim') {
+
+                    tempoEpisodio -= 2;
+
+                }
+
+                if (encerramento == 'Sim') {
+
+                    tempoEpisodio -= 2;
+
+                }
+
+
+                // VERIFICA QUANTOS EPISODIOS PODE SER ASSISTIDOS
+
+                episodios = tempoMinutos / tempoEpisodio;
+
+
+                // VERIFICA SE O CONTADOR (i) É MENOR QUE A QUANTIDADE DE EPISÓDIOS QUE PODE SER ASSISTIDOS
+
+
+                for (let i = 0; i < episodios; i++) {
+
+
+                    output.innerHTML += `<br><p>Assistindo ep: ${episodioInicio}</p>`;
+
+
+                    // VERIFICA SE O CONTADOR (cont) É MENOR OU IGUAL AO TEMPO DE DURAÇÃO DO EPISÓDIO, E SE O TEMPO DISPONÍVEL (tempoMinutos) PARA ASSISTIR, É MAIOR QUE 0
+
+                    for (let cont = 1; (cont <= tempoEpisodio) && (tempoMinutos > 0); cont++) {
+
+
+                        // VERIFICA SE O CONTADOR (cont - representa o minuto que está sendo assistido) É MENOR OU IGUAL A 2, E SE A ABERTURA FOI PULADA OU NÃO
+
+                        if (cont <= 2 && abertura == 'Não') {
+
+                            mensagemEpisodio = 'Assistindo Abertura';
+
+                        }
+
+
+                        // VERIFICA SE O CONTADOR (cont) É MAIOR QUE A DURAÇÃO DO EPISÓDIO - 2, E SE O ENCERRAMENTO FOI PULADO OU NÃO
+
+                        else if (cont > (tempoEpisodio - 2) && encerramento == 'Não') {
+
+                            mensagemEpisodio = 'Assistindo Encerramento'
+
+                        }
+
+                        else {
+
+                            mensagemEpisodio = 'Assistindo Episódio';
+
+                        }
+
+
+                        // MENSAGEM DO SISTEMA - MOSTRA O MINUTO E O QUE ESTÁ SENDO ASSISTIDO
+
+                        output.innerHTML += `<p>Minuto ${cont}: ${mensagemEpisodio}</p>`;
+
+                        tempoMinutos--;
+
+
+                    }
+
+                    episodioInicio++;
+
+                }
+
+
+                // MENSAGEM DO SISTEMA - FIM DOS EPISÓDIOS
+
+                output.innerHTML += `<br><p>Fim dos episódios!</p> Foram assistidos: ${episodios} episódios.`
+
+
+            }
+
+            else {
+
+                alert('Selecione as opções');
+
+            }
+
+        }
+
+
+        // CENÁRIO CONTRÁRIO - NUMÉRO ESTÁ FORA DO INTERVALO DEFINIDO - ENCERRAMENTO DO PROGRAMA.
+
+        else {
+
+            alert('O número do episódio é inválido!')
+
+        }
+
+    }
+
+</script>

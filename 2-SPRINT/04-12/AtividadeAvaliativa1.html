@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Kauan Gabriel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Avaliativa I</title>
+</head>
+
+<body>
+
+    <div id="container1">
+
+        <h1>Seja Bem vindo ao Banco KNAB</h1>
+
+        <h2>Simulação de Empréstimo e Investimentos</h2>
+
+        <p>Entre com os dados da sua Conta</p>
+
+        <input type="number" id="inp_conta" placeholder="Conta">
+        <input type="number" id="inp_digito" placeholder="Digito">
+        <input type="password" id="inp_senha" placeholder="Senha"> <br> <br>
+
+        <button onclick="simular()">Simular</button>
+
+    </div>
+
+    <div id="container2" style="display: none;">
+
+        <h1>O Banco KNAB é a melhor opção</h1>
+
+        <h2>Empréstimos e Investimentos com as melhores taxas do Mercado</h2>
+
+        <h3>Entre com os dados da sua Simulação</h3>
+
+        <span>Valor da Simulação</span>
+        <input type="number" id="inp_valor" placeholder="Ex.: 1200"> <br> <br>
+
+        <select id="s_operacao">
+            <option value="#">Selecione a Operação</option>
+            <option value="emprestimo">Empréstimo</option>
+            <option value="investimento">Investimento</option>
+        </select>
+
+        <select id="s_prazo">
+            <option value="#">Selecione o Prazo</option>
+            <option value="curto">Curto Prazo</option>
+            <option value="medio">Médio Prazo</option>
+            <option value="longo">Longo Prazo</option>
+        </select> <br><br>
+
+        <button onclick="resultado()">Mostrar o Resultado</button>
+        <button onclick="voltar()">Voltar Simulação</button>
+
+        <div id="mensagem"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function simular() {
+
+        // INPUTS
+
+        var conta = Number(inp_conta.value);
+        var digito = Number(inp_digito.value);
+        var senha = inp_senha.value;
+        var digitoCerto = conta % 10;
+
+
+        // VERIFICAÇÕES
+
+        if (conta != 0 && digito == digitoCerto) {
+
+            if ((digito >= 0 && digito <= 3 && senha == 'manaus') ||
+                (digito >= 4 && digito <= 7 && senha == 'recife') ||
+                (digito > 7 && senha == 'fortaleza')) {
+
+                container1.style.display = 'none';
+                container2.style.display = 'block';
+
+            }
+
+            else {
+
+                alert("Senha incorreta!")
+
+            }
+
+        }
+
+        else {
+
+            alert(`
+Erro no número da conta ou no digito.
+Digito da sua conta é: ${digitoCerto}`
+            );
+
+        }
+
+    }
+
+
+    // VARIAVEL GLOBAL PARA A PROXIMA FUNCTION
+
+    var contador = 0;
+
+    function resultado() {
+
+
+        // INPUTS
+
+        var operacao = s_operacao.value;
+        var prazo = s_prazo.value;
+        var valor = inp_valor.value;
+        var conta = 0;
+
+
+        // VERIFICAÇÕES
+
+        // VERIFICA SE UM VALOR FOI INSERIDO
+
+        if (valor == '') {
+            alert('Insira um Valor!');
+            return;
+        }
+
+        // VERIFICA SE UMA OPERAÇÃO FOI SELECIONADA
+
+        if (operacao === '#') {
+
+            alert("Selecione uma Operação!");
+
+            return;
+        }
+
+        // VERIFICA SE UM PRAZO FOI SELECIONADO
+        if (prazo === '#') {
+
+            alert("Selecione um Prazo!");
+
+            return;
+        }
+
+
+        // CENARIO 1 - VERIFICA SE A OPERAÇÃO É == 'EMPRESTIMO' E O PRAZO (CURTO - MEDIO - LONGO)
+
+        if (operacao == 'emprestimo') {
+
+            if (prazo == 'curto') {
+
+                conta = valor * 0.24;
+
+            }
+
+            else if (prazo == 'medio') {
+
+                conta = valor * 0.16;
+
+            }
+
+            else if (prazo == 'longo') {
+
+                conta = valor * 0.10;
+
+            }
+            
+
+            // MENSAGEM DO SISTEMA
+
+            if (prazo == 'curto' || prazo == 'medio') {
+
+                alert("Essa operação está condicionada ao seu Perfil.")
+
+            }
+
+            contador++;
+
+            mensagem.innerHTML += `<p>Simulação ${contador} Para o ${operacao} de R$${valor} no ${prazo} prazo, será cobrado os juros de R$ ${conta} ao ano.</p>`;
+
+        }
+
+
+        // CENARIO 2 - VERIFICA SE A OPERAÇÃO É == 'INVESTIMENTO' E O PRAZO (CURTO - MEDIO - LONGO)
+
+        else if (operacao == 'investimento') {
+
+            if (prazo == 'curto') {
+
+                conta = valor * 0.05;
+
+            }
+
+            else if (prazo == 'medio') {
+
+                conta = valor * 0.08;
+
+            }
+
+            else if (prazo == 'longo') {
+
+                conta = valor * 0.12;
+
+            }
+
+
+            // MENSAGEM DO SISTEMA
+
+            if (prazo == 'curto' || prazo == 'medio') {
+
+                alert("Essa operação está condicionada ao seu Perfil.")
+
+            }
+
+            contador++;
+
+            mensagem.innerHTML += `<p>Simulação ${contador} Investindo R$${valor} no ${prazo} prazo, o seu rendimento será de R$ ${conta} ao ano.</p>`;
+
+        }
+
+    }
+    
+
+    function voltar() {
+
+        mensagem.innerHTML = ``;
+        container1.style.display = 'block';
+        container2.style.display = 'none';
+        contador = 0;
+
+    }
+
+</script>
