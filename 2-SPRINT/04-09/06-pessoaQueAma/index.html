@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 06</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Estrutura de Repetição</h1>
+
+        <div class="divInput">
+
+            <p>Insira o nome da Pessoa que mais ama na Vida</p>
+            <input type="text" placeholder="Ex.: Kauan" id="inp_nome">
+
+            <p>Insira o quanto você ama essa Pessoa</p>
+            <input type="number" placeholder="Ex.: 97" id="inp_quantidade">
+
+            <button onclick="funcao()">Expressar Amor</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function funcao() {
+
+
+        // INPUTS
+
+        var nome = inp_nome.value;
+        var quantidade = Number(inp_quantidade.value);
+
+
+        // VERIFICAÇÕES
+
+        for (let i = 1; i <= quantidade; i++) {
+
+            output.innerHTML += `<p>${i} - ${nome}, eu te amo! Sempre lembre disso!</p>`;
+
+        }
+
+    }
+
+</script>
