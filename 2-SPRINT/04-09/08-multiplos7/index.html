@@ -8,7 +8,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../style.css">
     <!-- TITLE -->
-    <title>Exercício 07</title>
+    <title>Exercício 08</title>
 </head>
 
 <body>
@@ -20,9 +20,9 @@
         <div class="divInput">
 
             <p>Insira um número</p>
-            <input type="number" placeholder="Ex.: Entre 20 - 100" id="inp_numero">
+            <input type="number" placeholder="Ex.: Entre 0 - 200" id="inp_numero">
 
-            <button onclick="funcao()">Adoro multiplos de 5</button>
+            <button onclick="funcao()">Viva o 7</button>
 
         </div>
 
@@ -46,11 +46,13 @@
 
         // VERIFICAÇÕES
 
-        if (numero >= 20 && numero <= 100) {
+        output.innerHTML = '';
+
+        if (numero >= 0 && numero <= 200) {
 
             for (var i = 0; i <= numero; i++) {
 
-                if (i % 5 == 0) {
+                if (i % 7 == 0) {
 
                     output.innerHTML += `<p>${i}</p>`;
 

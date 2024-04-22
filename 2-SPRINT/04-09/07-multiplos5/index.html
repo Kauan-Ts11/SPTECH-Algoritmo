@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 07</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Estrutura de Repetição</h1>
+
+        <div class="divInput">
+
+            <p>Insira um número</p>
+            <input type="number" placeholder="Ex.: Entre 20 - 100" id="inp_numero">
+
+            <button onclick="funcao()">Adoro multiplos de 5</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function funcao() {
+
+
+        // INPUTS
+
+        var numero = Number(inp_numero.value);
+
+
+        // VERIFICAÇÕES
+
+        output.innerHTML = '';
+
+        if (numero >= 20 && numero <= 100) {
+
+            for (var i = 0; i <= numero; i++) {
+
+                if (i % 5 == 0) {
+
+                    output.innerHTML += `<p>${i}</p>`;
+
+                }
+
+            }
+
+        }
+
+        else {
+
+            output.innerHTML = `<p class="menor">Número inválido!</p>`;
+
+        }
+
+    }
+
+</script>
