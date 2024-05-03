@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício 03</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Insira os Bairros que já morou</p>
+            <input type="text" placeholder="Ex.: Cidade Tiradente" id="inp_bairro">
+
+            <button onclick="cadastrar()">Cadastrar Bairro</button>
+
+            <p>Insira o número do local que morou</p>
+            <input type="number" placeholder="Ex.: 1" id="inp_numero">
+
+            <button onclick="relembrar()">Relembrar Moradia</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // VETOR LISTA DE LUGARES
+
+    var lista_bairros = [];
+
+    function cadastrar() {
+
+        // INPUTS
+
+        var bairro = inp_bairro.value;
+
+        // ADICIONAR
+
+        lista_bairros.push(bairro);
+
+    }
+
+    function relembrar() {
+
+        // INPUTS
+
+        var numero = Number(inp_numero.value);
+
+        // TAMANHO DA LISTA
+
+        var tamanho_lista = lista_bairros.length;
+
+
+        // VERIFICAÇÕES
+
+        if (numero <= tamanho_lista && numero > 0) {
+
+
+            // MORADIA
+
+            var moradia = lista_bairros[numero - 1];
+
+            output.innerHTML = `${moradia}`;
+
+        }
+
+        else {
+
+            output.innerHTML = `<p>Você ainda não morou em ${numero} bairros.</p>`;
+
+        }
+
+    }
+
+
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício 05</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Insira os seus filmes favoritos</p>
+            <p>(1º que mais gosta, 2º que mais gosta...)</p>
+            <input type="text" placeholder="Ex.: Vingadores: Guerra Infinita" id="inp_filme">
+
+            <button onclick="cadastrar()">Cadastrar Filme</button>
+
+            <button onclick="favoritos()">Ver Favoritos</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // VETOR LISTA DE LUGARES
+
+    var lista_filmes = [];
+
+    function cadastrar() {
+
+        // INPUTS
+
+        var filme = inp_filme.value;
+
+        // ADICIONAR FILME
+
+        lista_filmes.push(filme);
+        
+    }
+
+    function favoritos() {
+
+        // PRIMEIRO FILME
+
+        primeiro_filme = lista_filmes[0];
+
+        // ULTIMO FILME
+
+        ultimo_filme = lista_filmes[lista_filmes.length - 1];
+
+        
+        // VERIFICAÇÕES
+
+        output.innerHTML = '';
+
+        for (var i = 0; i < lista_filmes.length; i++) {
+
+            output.innerHTML += `<p>${lista_filmes[i]}</p>`;
+
+        }
+
+        output.innerHTML += `<p>O filme que mais gosta é ${primeiro_filme}.</p>`
+        output.innerHTML += `<p>E desses, o que menos gosta é ${ultimo_filme}.</p>`
+
+        
+    }
+
+
+</script>

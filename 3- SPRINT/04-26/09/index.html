@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício 09</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e2eafb;
+            font-family: monospace;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: rgba(0, 0, 0, 0.708);
+        }
+
+        .divInput {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .divInput p {
+            font-size: 1rem;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            width: 84%;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+            background-color: #7fd3d3;
+            font-size: 20px;
+        }
+
+        #output {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        #output p {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Registrar Projeto</p>
+            <input type="text" placeholder="Ex.: Blackout" id="inp_projeto">
+
+            <button onclick="registrar()">Registrar Projeto</button>
+            <button onclick="mostrar()">Mostrar Projeto</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    var projetos = [];
+    var tamanho_lista = projetos.length;
+
+    function registrar() {
+
+        // INPUTS
+
+        var projeto = inp_projeto.value;
+
+        // ADICIONAR PROJETO
+
+        projetos.push(projeto)
+        tamanho_lista++;
+
+        // VARIAVEIS
+
+        var experiencia = '';
+        
+
+        // VERIFICAÇÕES
+
+        if (tamanho_lista > 0 && tamanho_lista <= 4) {
+
+            experiencia = 'Júnior';
+
+        }
+
+        else if (tamanho_lista >= 5 && tamanho_lista <= 12) {
+
+            experiencia = 'Pleno';
+
+        }
+
+        else {
+
+            experiencia = 'Sênior'
+
+        }
+
+
+        // MENSAGEM DO SISTEMA
+
+        output.innerHTML = ` <p>Você já fez ${tamanho_lista} projetos. Por isso você é um profissional ${experiencia}</p>`;
+
+    }
+
+
+    function mostrar() {
+
+
+        // LIMPA A DIV
+
+        output.innerHTML = '';
+
+
+        // REPETIÇÃO - ENQUANTO O CONTADOR FOR MAIOR DO QUE 0, ELE RODA O CÓDIGO E DECREMENTA O CONTADOR
+
+        for (var i = tamanho_lista - 1; i >= 0; i--) {
+
+
+            // MENSAGEM DO SISTEMA
+
+            output.innerHTML += `<p>${projetos[i]}</p>`;
+
+        }
+
+
+    }
+
+
+</script>

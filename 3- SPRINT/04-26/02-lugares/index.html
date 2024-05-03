@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício 02</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Destino da Viagem</p>
+            <input type="text" placeholder="Ex.: São Paulo" id="inp_destino">
+
+            <button onclick="adicionar()">Adicionar</button>
+            <button onclick="primeiro()">Primeiro</button>
+            <button onclick="terceiro()">Terceiro</button>
+            <button onclick="ultimo()">Ultimo</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // VETOR LISTA DE LUGARES
+
+    var lista_lugares = [];
+
+    function adicionar() {
+
+        // INPUTS
+
+        var destino = inp_destino.value;
+
+
+        // ADICIONA FRUTA NA LISTA
+
+        lista_lugares.push(destino)
+
+    }
+
+
+    function primeiro() {
+
+        // INPUTS
+
+        var destino = inp_destino.value;
+
+        var primeira_viagem = lista_lugares[0];
+
+
+        // VERIFICAÇÕES
+
+        if (primeira_viagem == undefined) {
+
+            output.innerHTML = `<p>Ainda não viajou</p>`;
+
+        }
+
+        else {
+
+            output.innerHTML = `<p>${primeira_viagem}</p>`;
+
+        }
+
+    }
+    
+
+    function terceiro() {
+
+        // INPUTS
+
+        var destino = inp_destino.value;
+
+        var terceira_viagem = lista_lugares[2];
+
+        
+        // VERIFICAÇÕES
+
+        if (terceira_viagem == undefined) {
+
+
+            output.innerHTML = `<p>Ainda não fez a Terceira viagem.</p>`;
+
+        }
+
+        else {
+
+
+            output.innerHTML = `<p>${terceira_viagem}</p>`;
+
+        }
+
+    }
+
+
+    function ultimo() {
+
+        // INPUTS
+
+        var destino = inp_destino.value;
+
+        var ultima_viagem = lista_lugares[lista_lugares.length - 1];
+
+
+        // VERIFICAÇÕES
+
+        if (ultima_viagem == undefined) {
+
+
+            output.innerHTML = `<p>Ainda não viajou.</p>`;
+
+        }
+
+        else {
+
+
+            output.innerHTML = `<p>${ultima_viagem}</p>`;
+
+        }
+    }
+
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício 01</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Pesquise uma Fruta</p>
+            <input type="text" placeholder="Ex.: banana" id="inp_fruta">
+
+            <button onclick="funcao()">Pesquisar</button>
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // LISTA DE FRUTAS
+
+    var lista_frutas = ['banana', 'maça', 'uva', 'morango'];
+
+
+    function funcao() {
+        
+        // INPUTS
+
+        var fruta = inp_fruta.value;
+
+
+        // VERIFICAÇÕES
+
+        if (lista_frutas.indexOf(fruta) >= 0) {
+            
+            output.innerHTML = `<p>A fruta ${fruta} existe na Lista!</p>`;
+
+        }
+
+        else {
+
+            output.innerHTML = `<p>A fruta ${fruta} não existe na Lista!</p>`;
+
+        }
+
+    }
+
+</script>
