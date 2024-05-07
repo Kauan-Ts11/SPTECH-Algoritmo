@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Desafio</title>
+    <!-- CSS -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e2eafb;
+            font-family: monospace;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: rgba(0, 0, 0, 0.708);
+        }
+
+        .divInput {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .divInput p {
+            font-size: 1rem;
+        }
+
+        .divInput div {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+        input {
+            width: 45%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            width: 84%;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+            background-color: #7fd3d3;
+            font-size: 20px;
+        }
+
+        #output {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        #output p {
+            margin-top: 5px;
+        }
+
+        #output img {
+            width: 100%;
+            max-width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Desafio</h1>
+
+        <div class="divInput">
+
+            <p>Insira a quantidade de Macarons e o seu Preço</p>
+            <div>
+                <input type="number" placeholder="Ex.: 1" id="inp_macarons">
+                <input type="number" placeholder="Ex.: 5$" id="inp_valor_macarons">
+            </div>
+
+            <p>Insira a quantidade de Brigadeiros e o seu Preço</p>
+            <div>
+                <input type="number" placeholder="Ex.: 5" id="inp_brigadeiros">
+                <input type="number" placeholder="Ex.: 2,5$" id="inp_valor_brigadeiros">
+            </div>
+
+            <p>Insira a quantidade de Cupcakes e o seu Preço</p>
+            <div>
+                <input type="number" placeholder="Ex.: 1" id="inp_cupcakes">
+                <input type="number" placeholder="Ex.: 1$" id="inp_valor_cupcakes">
+            </div>
+
+            <p>Insira a quantidade de Cheesecakes e o seu Preço</p>
+            <div>
+                <input type="number" placeholder="Ex.: 9" id="inp_cheesecakes">
+                <input type="number" placeholder="Ex.: 3$" id="inp_valor_cheesecakes">
+            </div>
+
+            <button onclick="verificar()">Verificar Vendas</button>
+
+        </div>
+
+        <div id="output"></div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    function verificar() {
+
+        // INPUTS
+
+        // QUANTIDADE DE DOCES
+
+        var macarons = Number(inp_macarons.value);
+        var brigadeiros = Number(inp_brigadeiros.value);
+        var cupcakes = Number(inp_cupcakes.value);
+        var cheesecakes = Number(inp_cheesecakes.value);
+
+
+        // VALOR DA UNIDADE
+
+        var base_macarons = Number(inp_valor_macarons.value);
+        var base_brigadeiros = Number(inp_valor_brigadeiros.value);
+        var base_cupcakes = Number(inp_valor_cupcakes.value);
+        var base_cheesecakes = Number(inp_valor_cheesecakes.value);
+
+
+        // SOMA DA QUANTIDADE DE CADA DOCE
+
+        var valor_macarons = macarons * base_macarons;
+        var valor_brigadeiros = brigadeiros * base_brigadeiros;
+        var valor_cupcakes = cupcakes * base_cupcakes;
+        var valor_cheesecakes = cheesecakes * base_cheesecakes;
+
+
+        // QUANTIDADE TOTAL DE DOCES
+
+        var qntdTotalDoces = macarons + brigadeiros + cupcakes + cheesecakes;
+
+
+        // VALOR TOTAL DE DOCES
+
+        var valorTotal = valor_macarons + valor_brigadeiros + valor_cupcakes + valor_cheesecakes;
+
+
+        // MENSAGEM FINAL
+
+        var mensagem = `<br> <p>Com a quantidade de ${macarons} Macarons, ${brigadeiros} Brigadeiros, ${cupcakes} Cupcakes e ${cheesecakes} Cheesecakes, a venda totalizará R$${valorTotal}</p>`
+
+
+        // LIMPAR A DIV
+
+        output.innerHTML = '';
+
+
+        // VERIFICAÇÕES
+
+        // VERIFICA SE TODOS OS VALORES SÃO >= 0
+
+        if (macarons >= 0 && brigadeiros >= 0 && cupcakes >= 0 && cheesecakes >= 0 && valor_macarons >= 0 && valor_brigadeiros >= 0 && valor_cupcakes >= 0 && valor_cheesecakes >= 0) {
+
+
+            for (var i = 1; i <= qntdTotalDoces; i++) {
+
+                if (macarons != 0) {
+
+                    output.innerHTML += `<p>VENDA ${i}   -   <img src="img/macarons.png" alt=""> </img>  -   R$ ${base_macarons}</p>`;
+
+                    macarons--;
+                }
+
+                else if (brigadeiros != 0) {
+
+                    output.innerHTML += `<p>VENDA ${i}   -   <img src="img/brigadeiro.png" alt=""> </img>   -   R$ ${base_brigadeiros}</p>`;
+
+                    brigadeiros--;
+                }
+
+                else if (cupcakes != 0) {
+
+                    output.innerHTML += `<p>VENDA ${i}   -   <img src="img/cupcake.png" alt=""> </img>   -   R$ ${base_cupcakes}</p>`;
+
+                    cupcakes--;
+                }
+
+                else if (cheesecakes != 0) {
+
+                    output.innerHTML += `<p>VENDA ${i}   -   <img src="img/chessecake.png" alt=""> </img>   -   R$ ${base_cheesecakes}</p>`;
+
+                    cheesecakes--;
+                }
+
+            }
+
+
+            // MENSAGEM DO SISTEMA
+
+            output.innerHTML += mensagem;
+
+
+        }
+
+
+        // CENÁRIO CONTRÁRIO - VALORES NEGATIVOS
+
+        else {
+
+            alert("Não é permitido valores negativos!");
+
+        }
+
+    }
+
+
+</script>
