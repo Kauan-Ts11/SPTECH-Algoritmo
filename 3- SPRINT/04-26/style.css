@@ -52,6 +52,7 @@ button {
     color: white;
     background-color:  #7fd3d3;
     font-size: 20px;
+    cursor: pointer;
 }
 
 #output {
