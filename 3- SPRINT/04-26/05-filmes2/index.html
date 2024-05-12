@@ -17,12 +17,9 @@
         <div class="divInput">
 
             <p>Insira os seus filmes favoritos</p>
-            <p>(1º que mais gosta, 2º que mais gosta...)</p>
             <input type="text" placeholder="Ex.: Vingadores: Guerra Infinita" id="inp_filme">
 
             <button onclick="cadastrar()">Cadastrar Filme</button>
-
-            <button onclick="favoritos()">Ver Favoritos</button>
 
         </div>
 
@@ -36,48 +33,56 @@
 
 <script>
 
-    // VETOR LISTA DE LUGARES
+    // VETOR LISTA DE FILMES
 
     var lista_filmes = [];
 
     function cadastrar() {
 
+
         // INPUTS
 
         var filme = inp_filme.value;
 
+
         // ADICIONAR FILME
 
         lista_filmes.push(filme);
-        
-    }
 
-    function favoritos() {
 
         // PRIMEIRO FILME
 
-        primeiro_filme = lista_filmes[0];
+        var primeiro_filme = lista_filmes[0];
 
-        // ULTIMO FILME
 
-        ultimo_filme = lista_filmes[lista_filmes.length - 1];
+        // TERCEIRO FILME
 
-        
+        var terceiro_filme = lista_filmes[2];
+
+
+        // LIMPANDO A DIV
+
+        output.innerHTML = ``;
+
+
         // VERIFICAÇÕES
 
-        output.innerHTML = '';
+        if (terceiro_filme) {
 
-        for (var i = 0; i < lista_filmes.length; i++) {
-
-            output.innerHTML += `<p>${lista_filmes[i]}</p>`;
+            output.innerHTML += `<p>Seu filme favorito: ${primeiro_filme}</p>`;
+            output.innerHTML += `<p>Seu 3º filme favorito: ${terceiro_filme}</p>`;
+            output.innerHTML += `<p>Total de filmes cadastrados: ${lista_filmes.length}</p>`;
 
         }
 
-        output.innerHTML += `<p>O filme que mais gosta é ${primeiro_filme}.</p>`
-        output.innerHTML += `<p>E desses, o que menos gosta é ${ultimo_filme}.</p>`
+        else {
 
-        
+            output.innerHTML += `<p>Seu filme favorito: ${primeiro_filme}</p>`;
+            output.innerHTML += `<p>Seu 3º filme favorito: Ainda não existe</p>`;
+            output.innerHTML += `<p>Total de filmes cadastrados: ${lista_filmes.length}</p>`;
+
+        }
+
     }
-
 
 </script>

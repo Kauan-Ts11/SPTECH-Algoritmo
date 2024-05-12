@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Exercício 08</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Insira o nome dos Alunos</p>
+            <input type="text" placeholder="Ex.: Kauan" id="inp_nome">
+
+            <button onclick="cadastrar()">Cadastrar</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // VETOR LISTA ALUNOS
+
+    var lista_alunos = [];
+
+
+    function cadastrar() {
+
+        // INPUTS
+
+        var aluno = inp_nome.value;
+
+
+        // ADICIONAR FILME
+
+        lista_alunos.push(aluno);
+
+
+        // LIMPANDO A DIV
+
+        output.innerHTML = '';
+
+
+        // VERIFICAÇÕES
+
+        for (var i = lista_alunos.length - 1; i >= 0; i--) {
+
+            output.innerHTML += `<p>${lista_alunos[i]}</p>`;
+
+        }
+        
+    }
+
+</script>

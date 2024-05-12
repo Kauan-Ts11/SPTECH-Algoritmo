@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 07</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Informe o nome dos Filmes que gosta</p>
+            <input type="text" placeholder="Ex.: Maze Runner" id="inp_filme">
+
+            <button onclick="cadastrar()">Cadastrar</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // VETOR - LISTA DE FILMES
+
+    var lista_filmes = [];
+
+
+    function cadastrar() {
+
+        // INPUTS
+
+        var filme = inp_filme.value;
+
+
+        // ADICIONAR FILME
+
+        lista_filmes.push(filme)
+
+
+        // LIMPANDO A DIV
+
+        output.innerHTML = '';
+
+
+        for (var i = 0; i < lista_filmes.length; i++) {
+
+            output.innerHTML += `<p>${lista_filmes[i]}</p>`;
+
+        }
+
+    }
+
+</script>
