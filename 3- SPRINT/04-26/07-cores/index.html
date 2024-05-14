@@ -60,7 +60,23 @@
 
         for (var i = 0; i < lista_filmes.length; i++) {
 
-            output.innerHTML += `<p>${lista_filmes[i]}</p>`;
+            if (i == 0) {
+                
+                output.innerHTML += `<p style="color: blue;">${lista_filmes[i]}</p>`;
+
+            }
+
+            else if (i % 2 == 0) {
+                
+                output.innerHTML += `<p style="color: blue;">${lista_filmes[i]}</p>`;
+
+            }
+
+            else {
+
+                output.innerHTML += `<p style="color: red;">${lista_filmes[i]}</p>`;
+
+            }
 
         }
 
