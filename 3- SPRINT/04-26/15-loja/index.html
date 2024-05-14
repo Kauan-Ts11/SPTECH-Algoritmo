@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 15</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Insira o nome do Produto</p>
+            <input type="text" placeholder="Ex.: Colher" id="inp_nome">
+
+            <p>Insira o valor do Produto</p>
+            <input type="number" placeholder="Ex.: 5,00" id="inp_valor">
+
+            <button onclick="cadastrar()">Cadastrar</button>
+            <button onclick="relatorio()">Relatório de Estoque</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    // VETOR - LISTA DE PRODUTOS
+
+    var lista_produtos = [];
+
+
+    // VETOR - LISTA DE PREÇOS
+
+    var lista_precos = [];
+
+
+    function cadastrar() {
+
+
+        // INPUTS
+
+        var nome = inp_nome.value;
+        var valor = Number(inp_valor.value);
+
+
+        // VERIFICAÇÕES 
+
+        if (nome != '' && valor > 0) {
+
+
+            // ADICIONANDO PRODUTO NA LISTA
+
+            lista_produtos.push(nome);
+
+            // ADICIONANDO PRECO NA LISTA
+
+            lista_precos.push(valor);
+
+        }
+
+        else {
+
+            alert('Preencha os campos corretamente.')
+
+        }
+
+    }
+
+
+    function relatorio() {
+
+
+        // VARIAVEIS
+
+        var valorVenda = 0;
+
+        var totalProdutos = lista_produtos.length;
+
+
+        // MENSAGEM DO SISTEMA
+
+        output.innerHTML = `<p>Total de produtos: ${totalProdutos}.</p> <br>`;
+
+
+        // VERIFICAÇÕES
+
+        for (var i = 0; i < lista_precos.length; i++) {
+
+            valorVenda = (lista_precos[i] * 0.25) + lista_precos[i];
+
+            output.innerHTML += `<p>Produto ${i + 1}: ${lista_produtos[i]}</p> <p>Preço de compra: <span style="color: blue;">R$${lista_precos[i]}</span> - Vender por <span style="color: green">R$${valorVenda.toFixed(2)}</span>.</p> <br>`;
+
+        }
+
+    }
+
+
+</script>
