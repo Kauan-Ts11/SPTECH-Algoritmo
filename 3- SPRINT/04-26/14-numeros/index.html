@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 14</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Digite um número qualquer</p>
+            <input type="number" placeholder="Ex.: 11" id="inp_numero">
+
+            <button onclick="analisar()">Analisar Histórico</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // VETOR - LISTA DE NUMEROS
+
+    var lista_numeros = [];
+
+    var menor = 0;
+    var maior = 0;
+
+
+    function analisar() {
+
+
+        // INPUTS
+
+        var numero = Number(inp_numero.value);
+
+
+        // ADICIONANDO NUMERO NA LISTA
+
+        lista_numeros.push(numero);
+
+        menor = lista_numeros[0];
+        maior = lista_numeros[0];
+
+
+        // LIMPAR A DIV
+
+        output.innerHTML = ``;
+
+
+        // VERIFICAÇÕES
+
+        if (numero >= 0) {
+
+            for (var i = 0; i < lista_numeros.length; i++) {
+
+                if (lista_numeros[i] > maior) {
+
+                    maior = lista_numeros[i];
+
+                }
+
+                if (lista_numeros[i] < menor) {
+
+                    menor = lista_numeros[i];
+
+                }
+
+
+                output.innerHTML += `<p>${i + 1}º numero: ${lista_numeros[i]}</p>`;
+
+            }
+
+            output.innerHTML += `<p>Menor número: ${menor}</p> <p>Maior número: ${maior}</p>`;
+
+        }
+
+        else {
+
+            output.innerHTML = `<p style="color: red;">Insira um número válido!</p>`;
+
+        }
+
+    }
+
+</script>

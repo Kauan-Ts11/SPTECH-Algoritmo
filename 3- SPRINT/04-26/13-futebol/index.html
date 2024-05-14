@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 13</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Indique o resultado do seu Time</p>
+            <select id="s_resultado">
+                <option value="#">Selecione um Resultado</option>
+                <option>Vitória</option>
+                <option>Empate</option>
+                <option>Derrota</option>
+            </select>
+
+            <button onclick="registrar()">Registrar Jogo</button>
+
+            <p>Indique qual Jogo deseja saber o resultado (10º)</p>
+            <input type="number" placeholder="Ex.: 12" id="inp_jogo" oninput="visualizar()">
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    // VETOR - LISTA DA CAMPANHA
+
+    var lista_campanha = [];
+
+
+    function registrar() {
+
+
+        // INPUTS
+
+        var resultado = s_resultado.value;
+
+
+        // VARIAVEIS
+
+        var vitorias = 0;
+        var empates = 0;
+        var derrotas = 0;
+
+        var pontuacaoTotal = 0;
+        var pontosPossiveis = 0;
+        var aproveitamento = 0;
+
+
+        // VERIFICAÇÕES
+
+        if (resultado != '#') {
+
+
+            // ADICIONANDO RESULTADO
+
+            lista_campanha.push(resultado);
+
+
+            for (var i = 0; i < lista_campanha.length; i++) {
+
+                if (lista_campanha[i] == 'Vitória') {
+
+                    vitorias++;
+                    pontuacaoTotal += 3;
+
+                }
+
+                else if (lista_campanha[i] == 'Empate') {
+
+                    empates++;
+                    pontuacaoTotal += 1;
+
+                }
+
+                else if (lista_campanha[i] == "Derrota") {
+
+                    derrotas++;
+
+                }
+
+            }
+
+            pontosPossiveis = lista_campanha.length * 3;
+
+            aproveitamento = (pontuacaoTotal / pontosPossiveis) * 100;
+
+            output.innerHTML = `<p>${vitorias} vitórias, ${empates} empates, ${derrotas} derrotas</p> <p>Pontuação total: ${pontuacaoTotal} pontos</p> <p>Aproveitamento: ${aproveitamento.toFixed(1)}%</p>`;
+
+        }
+
+        else {
+
+            output.innerHTML = `<p style="color: red;">Selecione um Resultado.</p>`;
+
+        }
+
+    }
+
+
+    function visualizar() {
+
+
+        // INPUTS
+
+        var jogo = Number(inp_jogo.value);
+
+
+        // VERIFICAÇÕES
+
+        if (jogo > 0 && jogo <= lista_campanha.length) {
+
+            var resultado = lista_campanha[jogo - 1]
+
+            output.innerHTML = `<p>No ${jogo}º jogo, o time obteve: ${resultado}</p>`;
+
+        }
+
+        else {
+
+            output.innerHTML = `<p>Não foi cadastrado um ${jogo}º Jogo!</p>`;
+
+        }
+
+    }
+
+
+</script>

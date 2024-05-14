@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 12</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Insira o nome de um de seus Filhos.</p>
+            <input type="text" placeholder="Ex.: Kauan" id="inp_nome">
+
+            <button onclick="cadastrar()">Cadastrar</button>
+            <button onclick="atualizar()">Atualizar Família</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    // VETOR - LISTA DE FILHOS
+
+    var lista_filhos = [];
+
+
+    function cadastrar() {
+        
+
+        // INPUTS
+
+        var nome = inp_nome.value;
+
+        var filho = false;
+
+
+        // VERIFICAÇÕES
+
+        for (var i = 0; i <= lista_filhos.length; i++) {
+
+            if (nome == lista_filhos[i]) {
+                
+                filho = true;
+
+                break;
+
+            }
+
+        }
+
+
+        if (filho) {
+            
+            alert('Não pode mais de 1 filho com o mesmo nome!');
+
+            output.innerHTML = ``;
+
+        }
+
+        else {
+
+            lista_filhos.push(nome);
+
+            output.innerHTML = `<p style="color: green;">Cadastrado!</p>`;
+
+        }
+
+    }
+
+
+    function atualizar() {
+
+        // VARIAVEIS
+
+        var filhos = lista_filhos.length;
+
+        
+        // VERIFICAÇÕES
+
+        var particular = filhos * 3000;
+
+        var publica = filhos * 1500;
+
+
+        output.innerHTML = `<p>Você tem ${filhos} filhos</p> <p>Seu custo mensal será aproximadamente <span style="color: red;">R$${particular}</span> se colocá-los em escola particular ou <span style="color: red;">R$${publica}</span> se eles estudarem em escola pública.</p>`;
+        
+    }
+
+
+</script>

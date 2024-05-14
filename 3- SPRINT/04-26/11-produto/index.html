@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METADATAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- TITLE -->
+    <title>Exercício 11</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Vetores</h1>
+
+        <div class="divInput">
+
+            <p>Insira o preço de um Produto.</p>
+            <input type="number" placeholder="Ex.: 10,00" id="inp_preco">
+
+            <button onclick="cadastrar()">Cadastrar</button>
+            <button onclick="atualizar()">Atualizar Estoque</button>
+
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+    // VETOR - LISTA DE PREÇOS
+
+    var lista_precos = [];
+
+
+    function cadastrar() {
+        
+        
+        // INPUTS
+
+        var preco = Number(inp_preco.value);
+
+
+        // ADICIONAR PRECO A LISTA DE PREÇOS
+
+        lista_precos.push(preco);
+
+    }
+
+
+    function atualizar() {
+        
+        // VARIAVEIS
+
+        var total = 0;
+
+        var estoque = lista_precos.length;
+
+        var texto = ``;
+
+
+        for (var i = lista_precos.length - 1; i >= 0; i--) {
+
+            texto += `<p>${lista_precos[i]}</p>`;
+
+            total += lista_precos[i]
+            
+        }
+
+        output.innerHTML = `${texto} <p>Você tem <span style="color: blue;">${estoque}</span> produtos cadastrados em estoque.</p> <p>Seu estoque vale <span style="color: green;">R$${total}</span>.</p>`; 
+
+    }
+
+</script>
